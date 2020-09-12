@@ -4,22 +4,31 @@ class Widget extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
-			preview: props.preview,
-			title: props.title
+			preview: props.track.preview,
+			title: props.track.title
 		}
 	}
 
 	playSong = () => {
-		let audioEl = document.getElementById(this.props.track.title);
+		let audioEl = document.getElementById(this.state.title);
 		audioEl.play();
 	}
 
 	render() {
 		return(
-			<div>
-				<h6>{this.props.track.title}</h6>
-				<audio id={this.props.track.title} src={this.props.track.preview}></audio>
-				<button onClick={this.playSong}>Play</button>
+			<div className='container'>
+				<div className='row'>
+					<div className='col-lg-1 image'>
+						{/* <img src={this.props.track.}></img> */}
+					</div>
+					<div className='col-lg-9 title'>
+						<audio id={this.state.title} src={this.state.preview}></audio>
+						<h6>{this.state.title}</h6>
+					</div>
+					<div className='col-lg-2'>
+						<button onClick={this.playSong}>Play</button>
+					</div>
+				</div>
 			</div>
 		)
 	}
