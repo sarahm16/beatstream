@@ -7,9 +7,12 @@ const API = {
     getArtist(artist) {
         return(
             axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist/?q=${artist}`)
-                .then(res => {
-                    console.log(res.data.data[0])
-                })
+        )
+    },
+
+    getTrackList(artist) {
+        return(
+            axios.get(`https://cors-anywhere.herokuapp.com/${artist}`)
         )
     }
 }

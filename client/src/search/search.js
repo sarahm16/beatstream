@@ -11,6 +11,7 @@ class Search extends Component {
         this.state={
             artist: '',
             song: '',
+            trackList: '',
             isSubmitted: false
         }
     }
@@ -23,10 +24,18 @@ class Search extends Component {
     search = () => {
         console.log('you clicked a button!');
 
-        API.getArtist(this.state.artist);
+        API.getArtist(this.state.artist)
+            .then(res => {
+                //API.getTrackList(res.data.data[0].tracklist)
+                axios.get(`https://cors-anywhere.herokuapp.com/${res.data.data[0].tracklist}`)
+                .then(trackList => {
+                    console.log(trackList)
+                    })
+                })
         
         this.setState({
-            isSubmitted: true
+            isSubmitted: true,
+            trackList: ''
         })
     }
 
