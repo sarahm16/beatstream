@@ -23,7 +23,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Widget />
+    <Search />
   );
 }
 

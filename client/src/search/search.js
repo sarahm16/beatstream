@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import Widget from '../components/widget/widget';
+
+import API from '../utils/API';
+
 class Search extends Component {
     constructor() {
         super();
         this.state={
             artist: '',
-            song: ''
+            song: '',
+            isSubmitted: false
         }
     }
 
@@ -17,10 +22,12 @@ class Search extends Component {
 
     search = () => {
         console.log('you clicked a button!');
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist/?q=${this.state.artist}`)
-            .then(res => {
-                console.log(res)
-            })
+
+        API.getArtist(this.state.artist);
+        
+        this.setState({
+            isSubmitted: true
+        })
     }
 
     render() {
@@ -28,6 +35,7 @@ class Search extends Component {
             <div>
                 <input type='text' id='artist' onChange={this.onChange} placeholder='artist'></input>
                 <button onClick={this.search}>Search</button>
+                <Widget />
             </div>
         )
     }
