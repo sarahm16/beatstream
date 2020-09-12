@@ -11,7 +11,7 @@ class Search extends Component {
         this.state={
             artist: '',
             song: '',
-            trackList: '',
+            trackList: [],
             isSubmitted: false
         }
     }
@@ -28,23 +28,30 @@ class Search extends Component {
             .then(res => {
                 //API.getTrackList(res.data.data[0].tracklist)
                 axios.get(`https://cors-anywhere.herokuapp.com/${res.data.data[0].tracklist}`)
-                .then(trackList => {
-                    console.log(trackList)
+                .then(res => {
+                    let trackList = res.data.data;
+                    this.setState({
+                        isSubmitted: true,
+                        trackList: [...this.state.trackList, ...trackList]
                     })
                 })
-        
-        this.setState({
-            isSubmitted: true,
-            trackList: ''
-        })
+            })
     }
 
     render() {
         return(
             <div>
                 <input type='text' id='artist' onChange={this.onChange} placeholder='artist'></input>
+                
+                {this.state.isSubmitted && 
+                    this.state.trackList.map(track => {
+                        return(
+                            <Widget track={track}/>
+                            // <div>{track.title}</div>
+                        )
+                    })}
                 <button onClick={this.search}>Search</button>
-                <Widget />
+
             </div>
         )
     }
