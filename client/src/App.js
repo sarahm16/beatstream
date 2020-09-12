@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Search from './search/search';
+import Widget from './components/widget/widget';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Search />
+    <Widget />
   );
 }
 
