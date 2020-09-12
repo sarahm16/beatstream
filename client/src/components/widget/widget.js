@@ -14,6 +14,11 @@ class Widget extends Component {
 		audioEl.play();
 	}
 
+	pauseSong = () => {
+		let audioEl = document.getElementById(this.state.title);
+		audioEl.pause();
+	}
+
 	render() {
 		return(
 			<div className='container'>
@@ -26,7 +31,8 @@ class Widget extends Component {
 						<h6>{this.state.title}</h6>
 					</div>
 					<div className='col-lg-2'>
-						<button onClick={this.playSong}>Play</button>
+						<button onClick={this.playSong}><i className="fas fa-play"></i></button>
+						<button onClick={this.pauseSong}><i className="fas fa-pause"></i></button>
 					</div>
 				</div>
 			</div>
