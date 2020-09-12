@@ -2,10 +2,24 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 class Search extends Component {
+    constructor() {
+        super();
+        this.state={
+            artist: '',
+            song: ''
+        }
+    }
+
+    onChange = (event) => {
+        // console.log(event.target.id);
+        // console.log(event.target.value);
+        this.setState({[event.target.id]: event.target.value})
+        console.log(this.state.artist);
+    }
 
     search = () => {
         console.log('you clicked a button!');
-        axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/version/service/id/method/?q=eminem')
+        axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist/?q=${this.state.artist}`)
             .then(res => {
                 console.log(res)
             })
@@ -13,7 +27,10 @@ class Search extends Component {
 
     render() {
         return(
-            <button onClick={this.search}>Search</button>
+            <div>
+                <input type='text' id='artist' onChange={this.onChange} placeholder='artist'></input>
+                <button onClick={this.search}>Search</button>
+            </div>
         )
     }
 }
