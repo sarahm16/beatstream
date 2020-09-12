@@ -20,11 +20,12 @@ class Widget extends Component {
 	}
 
 	render() {
+		console.log(this.props.track)
 		return(
 			<div className='container'>
 				<div className='row'>
 					<div className='col-lg-1 image'>
-						{/* <img src={this.props.track.}></img> */}
+						<img src={this.props.track.album['cover_small']}></img>
 					</div>
 					<div className='col-lg-9 title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
