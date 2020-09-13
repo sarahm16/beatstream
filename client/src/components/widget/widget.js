@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './style.css';
+
 class Widget extends Component {
 	constructor(props) {
 		super(props);
@@ -29,7 +31,8 @@ class Widget extends Component {
 					</div>
 					<div className='col-lg-9 title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
-						<h6>{this.state.title}</h6>
+						<h3>{this.state.title}</h3>
+						<h6 className='album-title'>{this.props.track.album.title}</h6>
 					</div>
 					<div className='col-lg-2'>
 						<button onClick={this.playSong}><i className="fas fa-play"></i></button>

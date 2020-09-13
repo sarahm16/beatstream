@@ -41,8 +41,11 @@ class Search extends Component {
     render() {
         return(
             <div>
-                <input type='text' id='artist' onChange={this.onChange} placeholder='artist'></input>
-                
+                <div className='search'>
+                    <input type='text' id='artist' onChange={this.onChange} placeholder='artist'></input>
+                    <button onClick={this.search}>Search</button>
+                </div>
+
                 {this.state.isSubmitted && 
                     this.state.trackList.map(track => {
                         return(
@@ -50,7 +53,6 @@ class Search extends Component {
                             // <div>{track.title}</div>
                         )
                     })}
-                <button onClick={this.search}>Search</button>
 
             </div>
         )
