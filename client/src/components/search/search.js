@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import Widget from '../components/widget/widget';
+import Widget from '../widget/widget';
 
-import API from '../utils/API';
+import API from '../../utils/API';
 
 class Search extends Component {
     constructor() {
