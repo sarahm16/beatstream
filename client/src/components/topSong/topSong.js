@@ -2,7 +2,10 @@ import React from 'react';
 
 const TopSong = (props) => {
     return(
-        <div>{props.title}</div>
+        <div>
+        <img src={props.track.artist.picture} />
+        {props.track.title}
+        </div>
     )
 }
 
