@@ -14,6 +14,15 @@ const API = {
         return(
             axios.get(`https://cors-anywhere.herokuapp.com/${artist}`)
         )
+    },
+
+    getTopHits() {
+        return(
+            axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
+            // .then(res => {
+            //     console.log(res);
+            // })
+        )
     }
 }
 
