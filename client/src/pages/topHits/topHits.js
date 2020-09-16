@@ -5,6 +5,8 @@ import API from '../../utils/API';
 
 import TopSong from '../../components/topSong/topSong';
 
+import './style.css';
+
 class TopHits extends Component {
     state={tracks: []}
 
@@ -20,13 +22,17 @@ class TopHits extends Component {
 
     render() {
         return(
-            <div>
-                {this.state.tracks.map(track => {
-                    console.log(track);
-                    return(
-                        <TopSong track={track} />
-                    )
-                })}
+            <div className='container top-hits'>
+                <div className='row'>
+                    {this.state.tracks.map(track => {
+                        console.log(track);
+                        return(
+                            <div className='col-lg-3'>
+                            <TopSong track={track} />
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         )
     }

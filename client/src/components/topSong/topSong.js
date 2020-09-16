@@ -11,10 +11,10 @@ const TopSong = (props) => {
 
     return(
         <div>
-            <img src={props.track.artist.picture} />
-            {props.track.artist.name}
-            {props.track.title}
-            <audio src={props.track.preview} id={props.track.title} />
+            <img src={props.track.artist.picture} /> <br />
+            {props.track.artist.name} <br />
+            {props.track.title} <br />
+            <audio src={props.track.preview} id={props.track.title} /> <br />
             <button onClick={playSong}>Play</button>
         </div>
     )
