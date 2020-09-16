@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 import Widget from '../widget/widget';
 
@@ -22,20 +23,26 @@ class Search extends Component {
     }
 
     search = () => {
-        console.log('you clicked a button!');
+        // console.log('you clicked a button!');
 
-        API.getArtist(this.state.artist)
-            .then(res => {
-                //API.getTrackList(res.data.data[0].tracklist)
-                axios.get(`https://cors-anywhere.herokuapp.com/${res.data.data[0].tracklist}`)
-                .then(res => {
-                    let trackList = res.data.data;
-                    this.setState({
-                        isSubmitted: true,
-                        trackList: [...this.state.trackList, ...trackList]
-                    })
-                })
-            })
+        // API.getArtist(this.state.artist)
+        //     .then(res => {
+        //         //API.getTrackList(res.data.data[0].tracklist)
+        //         axios.get(`https://cors-anywhere.herokuapp.com/${res.data.data[0].tracklist}`)
+        //         .then(res => {
+        //             let trackList = res.data.data;
+        //             this.setState({
+        //                 isSubmitted: true,
+        //                 trackList: [...this.state.trackList, ...trackList]
+        //             })
+        //         })
+        //     })
+        return(
+            <Redirect to={{
+                pathname: '/results',
+                state: {test: 'testing'}
+            }} />
+        )
     }
 
     render() {
