@@ -4,21 +4,25 @@ import axios from 'axios';
 import API from '../../utils/API';
 
 class TopHits extends Component {
+    state={tracks: []}
 
     componentDidMount() {
-        // axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
-        //     .then(res => {
-        //         console.log(res);
-        //     })
         API.getTopHits()
         .then(res=> {
-            console.log(res)
+            console.log(res.data.tracks.data)
+            this.setState({
+                tracks: res.data.tracks.data
+            })
         })
     }
 
     render() {
         return(
-            <div>Top Hits</div>
+            <div>
+                {this.state.tracks.map(track => {
+                    console.log(track)
+                })}
+            </div>
         )
     }
 
