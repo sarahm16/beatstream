@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import API from '../../utils/API';
 
+import TopSong from '../../components/topSong/topSong';
+
 class TopHits extends Component {
     state={tracks: []}
 
@@ -21,6 +23,9 @@ class TopHits extends Component {
             <div>
                 {this.state.tracks.map(track => {
                     console.log(track)
+                    return(
+                        <TopSong title={track.title} />
+                    )
                 })}
             </div>
         )
