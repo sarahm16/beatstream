@@ -22,7 +22,7 @@ class TopHits extends Component {
         return(
             <div>
                 {this.state.tracks.map(track => {
-                    console.log(track.artist.picture);
+                    console.log(track);
                     return(
                         <TopSong track={track} />
                     )
