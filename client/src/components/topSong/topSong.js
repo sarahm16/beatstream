@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TopSong = (props) => {
+import './style.css';
 
-    //const [ title, preview ] = props.track;
+const TopSong = (props) => {
 
     function playSong() {
         let audioEl = document.getElementById(props.track.title);
@@ -12,6 +12,7 @@ const TopSong = (props) => {
     return(
         <div>
             <img src={props.track.artist.picture} />
+            {props.track.artist.name}
             {props.track.title}
             <audio src={props.track.preview} id={props.track.title} />
             <button onClick={playSong}>Play</button>
