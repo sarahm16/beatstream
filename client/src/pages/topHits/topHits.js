@@ -27,8 +27,8 @@ class TopHits extends Component {
                     {this.state.tracks.map(track => {
                         console.log(track);
                         return(
-                            <div className='col-lg-3'>
-                            <TopSong track={track} />
+                            <div className='col-lg-4'>
+                                <TopSong track={track} />
                             </div>
                         )
                     })}
