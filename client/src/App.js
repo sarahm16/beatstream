@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 import './App.css';
 
 import Navbar from './components/navbar/navbar';
@@ -10,10 +9,10 @@ import TopHits from './pages/topHits/topHits';
 function App() {
   return (
     <div>
-      <Navbar />
       <Router>
-        <Route exact path='/' component={TopHits} />
-        <Route exact path='/results' component={Results} />
+        <Navbar />
+        <Route exact path='/results' component={withRouter(Results)} />
+        <Route exact path='/' component={withRouter(TopHits)} />
       </Router>
       {/* <Search /> */}
     </div>

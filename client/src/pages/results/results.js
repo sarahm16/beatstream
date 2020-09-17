@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 
 class Results extends Component {
 
-    componentDidMount = () => {
-        console.log(this.props.location.state.test);
+    componentDidMount = (props) => {
+        //console.log(this.props.location.state.test);
+        console.log('testing');
     }
 
     render() {

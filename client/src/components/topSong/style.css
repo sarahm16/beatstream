@@ -7,6 +7,10 @@ img {
     margin-top: 10px;
 }
 
+.artist {
+    color: rgb(57, 57, 119);
+}
+
 .image {
     position: relative;
 }
