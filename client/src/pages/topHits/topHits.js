@@ -23,6 +23,7 @@ class TopHits extends Component {
     render() {
         return(
             <div className='container top-hits'>
+                <h1 className='title'>Top Hits</h1>
                 <div className='row'>
                     {this.state.tracks.map(track => {
                         console.log(track);
