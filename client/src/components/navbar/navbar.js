@@ -11,8 +11,8 @@ function Navbar() {
         //     <div className='search'></div>
         // </div>
         // <h1 className='header'><i className="fas fa-music"></i> BeatStream</h1>
-        <nav className="navbar navbar-light bg-light justify-content-between">
-            <span className="navbar-brand h1"><i className="fas fa-music"></i> Beatstream</span>
+        <nav className="navbar navbar-light justify-content-between">
+            <span className="h2"><i className="fas fa-music"></i> Beatstream</span>
             <form className="form-inline">
                 <Search />
                 {/* <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
