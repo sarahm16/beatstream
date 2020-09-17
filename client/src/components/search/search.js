@@ -12,26 +12,17 @@ class Search extends Component {
     constructor() {
         super();
         this.state={
-            artist: '',
-            song: '',
+            query: '',
             trackList: [],
             isSubmitted: false
         }
     }
 
-    // componentDidMount() {
-    //     return(
-    //     <Redirect to='/results' />)
-    // }
-
     onChange = (event) => {
         this.setState({[event.target.id]: event.target.value})
-        //console.log(this.state.artist);
     }
 
-    search = (event) => {
-        //event.preventDefault();
-        // console.log('you clicked a button!');
+    search = () => {
 
         // API.getArtist(this.state.artist)
         //     .then(res => {
@@ -46,13 +37,6 @@ class Search extends Component {
         //         })
         //     })
 
-            // return(
-            //     <Redirect to={{
-            //         pathname: '/results',
-            //         state: {test: 'testing'}
-            //     }} />
-            //     <Redirect to='/results' />
-            // )
             this.setState({isSubmitted: true});
     }
 
@@ -61,14 +45,14 @@ class Search extends Component {
             return(
                 <Redirect to={{
                     pathname: '/results',
-                    state: {artist: this.state.artist}
+                    state: {query: this.state.query}
                 }} />
             )
         }
         return(
             <div>
                 <div className='search'>
-                    <input type='text' id='artist' onChange={this.onChange} placeholder='artist'></input>
+                    <input type='text' id='query' onChange={this.onChange} placeholder='Artist, Album, or Song'></input>
                     <button onClick={this.search} className='search'><i className="fas fa-search"></i></button>
                 </div>
 
