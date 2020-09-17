@@ -26,7 +26,7 @@ class Search extends Component {
 
     onChange = (event) => {
         this.setState({[event.target.id]: event.target.value})
-        console.log(this.state.artist);
+        //console.log(this.state.artist);
     }
 
     search = (event) => {
@@ -61,7 +61,7 @@ class Search extends Component {
             return(
                 <Redirect to={{
                     pathname: '/results',
-                    state: {test: 'testing'}
+                    state: {artist: this.state.artist}
                 }} />
             )
         }
