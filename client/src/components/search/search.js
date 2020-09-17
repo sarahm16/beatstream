@@ -59,7 +59,10 @@ class Search extends Component {
     render() {
         if(this.state.isSubmitted) {
             return(
-                <Redirect to='/results' />
+                <Redirect to={{
+                    pathname: '/results',
+                    state: {test: 'testing'}
+                }} />
             )
         }
         return(

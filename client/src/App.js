@@ -11,7 +11,7 @@ function App() {
     <div>
       <Router>
         <Navbar />
-        <Route exact path='/results' component={withRouter(Results)} />
+        <Route exact path='/results' render={(props) => <Results {...props} />} />
         <Route exact path='/' component={withRouter(TopHits)} />
       </Router>
       {/* <Search /> */}

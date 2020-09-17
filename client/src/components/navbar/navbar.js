@@ -6,11 +6,6 @@ import Search from '../search/search';
 
 function Navbar() {
     return(
-        // <div className='header'>
-        //     <div className='title'><h1><i className="fas fa-music"></i> BeatStream</h1></div>
-        //     <div className='search'></div>
-        // </div>
-        // <h1 className='header'><i className="fas fa-music"></i> BeatStream</h1>
         <nav className="navbar navbar-light justify-content-between">
             <span className="h2"><i className="fas fa-music"></i> Beatstream</span>
             <form className="form-inline">
