@@ -11,7 +11,8 @@ img {
     position: relative;
 }
 
-.play {
+.play,
+.pause {
     background-color: transparent;
     color: rgba(255, 255, 255, 0.75);
     border: none;
