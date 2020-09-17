@@ -6,6 +6,8 @@ import Widget from '../widget/widget';
 
 import API from '../../utils/API';
 
+import './style.css';
+
 class Search extends Component {
     constructor() {
         super();
@@ -50,7 +52,7 @@ class Search extends Component {
             <div>
                 <div className='search'>
                     <input type='text' id='artist' onChange={this.onChange} placeholder='artist'></input>
-                    <button onClick={this.search}>Search</button>
+                    <button onClick={this.search} className='search'><i className="fas fa-search"></i></button>
                 </div>
 
                 {this.state.isSubmitted && 

@@ -1,0 +1,19 @@
+#artist {
+    border-radius: 25px;
+    border: none;
+    background-color: rgba(164, 164, 255, 0.75)
+}
+
+i {
+    color: white;
+}
+
+.search {
+    border: none;
+    background-color: transparent;
+}
+
+::placeholder {
+    color: white;
+    padding-left: 5px;
+}
