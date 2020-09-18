@@ -23,7 +23,12 @@ class Results extends Component {
 
     render() {
         return(
-            <div>Results</div>
+            <div>{this.state.albums.map(album => {
+                return(
+                    <div>{album.album.title}</div>
+                )
+            })
+            }</div>
         )
     }
 }
