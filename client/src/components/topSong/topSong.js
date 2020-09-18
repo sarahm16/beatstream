@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import './style.css';
+
+import API from '../../utils/API';
 
 const TopSong = (props) => {
 
     const [isPlaying, setIsPlaying] = useState(false);
+    const [redirect, setRedirect] = useState(false);
 
     function playSong() {
         let audioEl = document.getElementById(props.track.title);
@@ -16,6 +20,25 @@ const TopSong = (props) => {
         let audioEl = document.getElementById(props.track.title);
         audioEl.pause();
         setIsPlaying(false);
+    }
+
+    function getArtist() {
+        setRedirect(true);
+        //console.log(props.track.artist.name);
+        // API.getArtist(props.track.artist.name)
+        //     .then(res => {
+        //         console.log(res)
+        //     })
+        //console.log(props.track.artist);
+    }
+
+    if(redirect) {
+        return(
+            <Redirect to={{
+                pathname: '/results',
+                state: {query: props.track.artist.name}
+            }} />
+        )
     }
 
     return(
@@ -37,8 +60,8 @@ const TopSong = (props) => {
                     </button>}
             </div>
             <div className='song-info'>
-                <h4 className='artist'>{props.track.artist.name}</h4>
-                {props.track.title} <br />
+                <button onClick={getArtist}><h4 className='artist'>{props.track.artist.name}</h4></button>
+                <br />{props.track.title} <br />
                 <audio src={props.track.preview} id={props.track.title} /> <br />
             </div>
         </div>
