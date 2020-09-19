@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import API from '../../utils/API';
 
+import Album from '../../components/album/album';
+
 class Results extends Component {
     constructor() {
         super();
@@ -23,9 +25,11 @@ class Results extends Component {
 
     render() {
         return(
-            <div>{this.state.albums.map(album => {
+            <div className='container'>
+            
+            {this.state.albums.map(album => {
                 return(
-                    <div>{album.album.title}</div>
+                    <div className='col-lg-2'><Album album={album.album} /></div>
                 )
             })
             }</div>
