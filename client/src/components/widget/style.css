@@ -1,3 +1,7 @@
 .album-title {
     font-style: italic;
 }
+
+img {
+    border-radius: 0px;
+}

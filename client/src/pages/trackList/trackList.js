@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Widget from '../../components/widget/widget';
+
 class TrackList extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            tracklist: []
+            tracklist: [],
+            image: '',
+            title: ''
         }
     }
 
     componentDidMount() {
+        //console.log(this.state.album)
         axios.get(`https://cors-anywhere.herokuapp.com/${this.props.location.state.tracklist}`)
             .then(res => {
+                //console.log(res.data)
                 this.setState({
-                    tracklist: res.data.data
+                    tracklist: res.data.data,
+                    image: this.props.location.state.album['cover_small'],
+                    title: this.props.location.state.album.title
                 })
             })
     }
@@ -23,7 +31,7 @@ class TrackList extends Component {
             <div>
                 {this.state.tracklist.map(track => {
                     return(
-                        <h4>{track.title}</h4>
+                        <Widget track={track} image={this.state.image} title={this.state.title} />
                     )
                 })}
             </div>

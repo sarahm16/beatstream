@@ -21,12 +21,15 @@ const Album = (props) => {
     }
 
     if(redirect) {
-        //console.log(props.album.tracklist)
+        console.log('props.album');
+        console.log(props.album);
         return(
             <Redirect to={{
                 pathname: '/trackList',
-                state: {tracklist: props.album.tracklist}
-                //state: {trackList: res.data}
+                state: {
+                    tracklist: props.album.tracklist,
+                    album: props.album
+                }
             }} />
         )
     }
