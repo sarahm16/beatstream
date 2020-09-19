@@ -9,17 +9,25 @@ const Album = (props) => {
     const [ redirect, setRedirect ] = useState(false);
 
     function getTrackList() {
-        axios.get(`https://cors-anywhere.herokuapp.com/${props.album.tracklist}`)
-            .then(res => {
-                console.log('tracklist');
-                console.log(res);
-                setRedirect(true);
-            })
+        //console.log('props');
+        //console.log(props.album.tracklist)
+        // axios.get(`https://cors-anywhere.herokuapp.com/${props.album.tracklist}`)
+        //     .then(res => {
+        //         console.log('tracklist');
+        //         console.log(res);
+        //         setRedirect(true);
+        //     })
+        setRedirect(true);
     }
 
     if(redirect) {
+        //console.log(props.album.tracklist)
         return(
-            <Redirect to={{pathname: '/trackList'}} />
+            <Redirect to={{
+                pathname: '/trackList',
+                state: {tracklist: props.album.tracklist}
+                //state: {trackList: res.data}
+            }} />
         )
     }
 
