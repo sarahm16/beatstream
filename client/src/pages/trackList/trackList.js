@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import Widget from '../../components/widget/widget';
 
+import './style.css';
+
 class TrackList extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +22,7 @@ class TrackList extends Component {
                 //console.log(res.data)
                 this.setState({
                     tracklist: res.data.data,
-                    image: this.props.location.state.album['cover_small'],
+                    image: this.props.location.state.album['cover_medium'],
                     title: this.props.location.state.album.title
                 })
             })
@@ -29,6 +31,9 @@ class TrackList extends Component {
     render() {
         return(
             <div>
+                <div className='album'>
+                    <img src={this.state.image} />
+                </div>
                 {this.state.tracklist.map(track => {
                     return(
                         <Widget track={track} image={this.state.image} title={this.state.title} />

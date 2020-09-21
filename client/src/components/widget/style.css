@@ -5,3 +5,14 @@
 img {
     border-radius: 0px;
 }
+
+.play-button,
+.pause-button {
+    border: none;
+    background: transparent
+}
+
+.fa-play,
+.fa-pause {
+    color: rgb(58, 58, 58)
+}

@@ -22,22 +22,21 @@ class Widget extends Component {
 	}
 
 	render() {
-		//console.log(this.props.track)
 		return(
 			<div className='container'>
 				<div className='row'>
-					<div className='col-lg-1 image'>
+					{/* <div className='col-lg-1 image'>
 						<img src={this.props.image} />
-						{/* <img src={this.props.track.album['cover_small']}></img> */}
-					</div>
-					<div className='col-lg-9 title'>
+						<img src={this.props.track.album['cover_small']}></img>
+					</div> */}
+					<div className='col-lg-10 title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
 						<h3>{this.state.title}</h3>
 						<h6 className='album-title'>{this.props.title}</h6>
 					</div>
 					<div className='col-lg-2'>
-						<button onClick={this.playSong}><i className="fas fa-play"></i></button>
-						<button onClick={this.pauseSong}><i className="fas fa-pause"></i></button>
+						<button onClick={this.playSong} className='play-button'><i className="fas fa-play"></i></button>
+						<button onClick={this.pauseSong} className='pause-button'><i className="fas fa-pause"></i></button>
 					</div>
 				</div>
 			</div>

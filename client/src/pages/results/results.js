@@ -4,6 +4,8 @@ import API from '../../utils/API';
 
 import Album from '../../components/album/album';
 
+import './style.css';
+
 class Results extends Component {
     constructor() {
         super();
@@ -25,14 +27,18 @@ class Results extends Component {
 
     render() {
         return(
-            <div className='container'>
-            
-            {this.state.albums.map(album => {
-                return(
-                    <div className='col-lg-2'><Album album={album.album} /></div>
-                )
-            })
-            }</div>
+            <div>
+                <h1 className='title bg-light'>{this.props.location.state.query}</h1>
+                <div className='container'>
+                    <div className='row'>
+                        {this.state.albums.map(album => {
+                            return(
+                                <div className='col-lg-4'><Album album={album.album} /></div>
+                            )
+                        })
+                    }</div>
+                </div>
+            </div>
         )
     }
 }

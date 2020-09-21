@@ -1,3 +1,13 @@
 .album-cover {
     border-radius: 0px;
 }
+
+.album-button {
+    border: none;
+    background: transparent;
+    color: rgb(57, 57, 119);
+}
+
+.album {
+    text-align: center;
+}

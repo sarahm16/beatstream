@@ -9,6 +9,8 @@ img {
 
 .artist {
     color: rgb(57, 57, 119);
+    border: none;
+    background: transparent;
 }
 
 .image {
