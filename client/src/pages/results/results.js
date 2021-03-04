@@ -15,20 +15,20 @@ class Results extends Component {
     }
 
     componentDidMount = (props) => {
-        console.log(this.props.location.state.query);
-        API.searchQuery(this.props.location.state.query)
+        console.log(this.props.match.params.artist)
+        // console.log(this.props.location.state.query);
+        API.searchQuery(this.props.match.params.artist)
             .then(res => {
                 this.setState({
                     albums: res.data.data
                 })
-                console.log(res.data.data);
             })
     }
 
     render() {
         return(
             <div>
-                <h1 className='title bg-light'>{this.props.location.state.query}</h1>
+                {/* <h1 className='title bg-light'>{this.props.location.state.query}</h1> */}
                 <div className='container'>
                     <div className='row'>
                         {this.state.albums.map(album => {

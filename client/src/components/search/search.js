@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Redirect, Router } from 'react-router-dom';
+import { Redirect, Router, Link } from 'react-router-dom';
 
 import Widget from '../widget/widget';
 
@@ -24,6 +24,8 @@ class Search extends Component {
 
     search = () => {
 
+        
+
         // API.getArtist(this.state.artist)
         //     .then(res => {
         //         //API.getTrackList(res.data.data[0].tracklist)
@@ -41,19 +43,19 @@ class Search extends Component {
     }
 
     render() {
-        if(this.state.isSubmitted) {
-            return(
-                <Redirect to={{
-                    pathname: '/results',
-                    state: {query: this.state.query}
-                }} />
-            )
-        }
+        // if(this.state.isSubmitted) {
+        //     return(
+        //         <Redirect to={{
+        //             pathname: '/results',
+        //             state: {query: this.state.query}
+        //         }} />
+        //     )
+        // }
         return(
             <div>
                 <div className='search'>
                     <input type='text' id='query' onChange={this.onChange} placeholder='Artist, Album, or Song'></input>
-                    <button onClick={this.search} className='search'><i className="fas fa-search"></i></button>
+                    <Link to={`/results/${this.state.query}`}><button className='search'><i className="fas fa-search"></i></button></Link>
                 </div>
 
                 {this.state.isSubmitted && 
