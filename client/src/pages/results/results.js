@@ -16,23 +16,33 @@ class Results extends Component {
     }
 
     initializeComponent = (artist) => {
+        let albumList = [];
+        let albumIDs = [];
+
         API.searchQuery(artist)
             .then(res => {
+                //push unique albums to albumList, prevents album duplicates
+                for(let i=0; i<res.data.data.length; i++) {
+                    let albumID = res.data.data[i].album.id;
+                    if(albumIDs.indexOf(albumID) === -1) {
+                        albumIDs.push(albumID);
+                        albumList.push(res.data.data[i])
+                    }
+                }
+
                 this.setState({
-                    albums: res.data.data
+                    albums: albumList
                 })
             })
     }
 
     componentDidMount = (props) => {
-        console.log(this.props.match.params.artist)
         let artist = this.props.match.params.artist;
-        this.initializeComponent(artist)
-        // console.log(this.props.location.state.query);
-        
+        this.initializeComponent(artist);
     }
 
     componentWillReceiveProps = (nextProps) => {
+        //allows user to perform consecutive searches
         let artist = nextProps.match.params.artist;
         this.initializeComponent(artist)
     }
@@ -45,8 +55,9 @@ class Results extends Component {
                 <div className='container'>
                     <div className='row'>
                         {this.state.albums.map(album => {
+                            // console.log(album)
                             return(
-                                <div className='col-lg-4'><Album album={album.album} /></div>
+                                <div className='col-lg-4'><Album album={album.album} trackList={album.album.trackList} /></div>
                             )
                         })
                     }</div>
