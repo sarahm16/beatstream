@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Widget from '../../components/widget/widget';
+import Navbar from '../../components/navbar/navbar';
 
 import './style.css';
 
@@ -30,15 +31,17 @@ class TrackList extends Component {
 
     render() {
         return(
-            <div>
-                <div className='album'>
-                    <img src={this.state.image} />
+            <div><Navbar />
+                <div>
+                    <div className='album'>
+                        <img src={this.state.image} />
+                    </div>
+                    {this.state.tracklist.map(track => {
+                        return(
+                            <Widget track={track} image={this.state.image} title={this.state.title} />
+                        )
+                    })}
                 </div>
-                {this.state.tracklist.map(track => {
-                    return(
-                        <Widget track={track} image={this.state.image} title={this.state.title} />
-                    )
-                })}
             </div>
         )
     }

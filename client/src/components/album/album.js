@@ -38,7 +38,9 @@ const Album = (props) => {
         <div>
             <img src={props.album['cover_medium']} className='album-cover' />
             <div className='album'>
-                <button onClick={getTrackList} className='album-button'><h4>{props.album.title}</h4></button>
+                <button onClick={getTrackList} className='album-button'>
+                    <h5>{props.album.title}</h5>
+                </button>
             </div>
         </div>
     )
