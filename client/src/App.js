@@ -13,7 +13,7 @@ function App() {
       <Router>
         {/* <Navbar /> */}
         <Route exact path='/results/:artist' render={(props) => <Results {...props} />} />
-        <Route exact path='/trackList' render={(props) => <TrackList {...props} />} />
+        <Route exact path='/trackList/:album' render={(props) => <TrackList {...props} />} />
         <Route exact path='/' component={withRouter(TopHits)} />
       </Router>
       {/* <Search /> */}

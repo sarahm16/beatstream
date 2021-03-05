@@ -55,7 +55,7 @@ class Results extends Component {
                 <div className='container'>
                     <div className='row'>
                         {this.state.albums.map(album => {
-                            console.log(album)
+                            console.log(album.album.tracklist)
                             return(
                                 <div className='col-lg-4'><Album album={album.album} trackList={album.album.trackList} /></div>
                             )

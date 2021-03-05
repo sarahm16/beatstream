@@ -17,14 +17,14 @@ class TrackList extends Component {
     }
 
     componentDidMount() {
-        //console.log(this.state.album)
-        axios.get(`https://cors-anywhere.herokuapp.com/${this.props.location.state.tracklist}`)
+        console.log(this.props.location.state.image)
+        //console.log(this.props.match.params.album)
+        let albumID = this.props.match.params.album;
+        axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${albumID}/tracks`)
             .then(res => {
-                //console.log(res.data)
+                console.log(res)
                 this.setState({
-                    tracklist: res.data.data,
-                    image: this.props.location.state.album['cover_medium'],
-                    title: this.props.location.state.album.title
+                    tracklist: res.data.data
                 })
             })
     }
@@ -34,7 +34,7 @@ class TrackList extends Component {
             <div><Navbar />
                 <div>
                     <div className='album'>
-                        <img src={this.state.image} />
+                        <img src={this.props.location.state.image} />
                     </div>
                     {this.state.tracklist.map(track => {
                         return(
