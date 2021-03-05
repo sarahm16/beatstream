@@ -41,7 +41,9 @@ const Album = (props) => {
                 <Link to={{
                     pathname: `/trackList/${props.album.id}`,
                     state: {
-                        image: props.album['cover_medium']
+                        image: props.album['cover_medium'],
+                        title: props.album.title,
+                        artist: props.artist
                     }
                 }}>
                     <h5>{props.album.title}</h5>

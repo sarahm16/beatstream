@@ -1,9 +1,19 @@
-img {
+.album-img {
     border-radius: 0px;
+    width: 180px;
+    height: 180px;
 }
 
 .album {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.album-info {
+    width: 60%;
+}
+
+.album-title {
+    text-align: center;
 }

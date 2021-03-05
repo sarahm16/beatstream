@@ -33,9 +33,21 @@ class TrackList extends Component {
         return(
             <div><Navbar />
                 <div>
-                    <div className='album'>
-                        <img src={this.props.location.state.image} />
+                    <div className='container album-info'>
+                        <div className='row'>
+                            <div className='col-lg-4'>
+                                <img src={this.props.location.state.image} className='album-img' />
+                            </div>
+                            <div className='col-lg-8 album-title'>
+                                <h1>{this.props.location.state.title}</h1>
+                                <h5>{this.props.location.state.artist}</h5>
+                            </div>
+                        </div>
+                        
                     </div>
+                    {/* <div className='album'>
+                        <img src={this.props.location.state.image} />
+                    </div> */}
                     {this.state.tracklist.map(track => {
                         return(
                             <Widget track={track} image={this.state.image} title={this.state.title} />
