@@ -23,7 +23,7 @@ class Widget extends Component {
 
 	render() {
 		return(
-			<div className='container'>
+			<div className='widget'>
 				<div className='row'>
 					{/* <div className='col-lg-1 image'>
 						<img src={this.props.image} />

@@ -46,8 +46,8 @@ class TrackList extends Component {
                                     <img src={this.props.location.state.image} className='album-img' />
                                     
                             </div>
-                            <div classname='row'>
-                                <h1>{this.props.location.state.title}</h1>
+                            <div classname='row album-title'>
+                                <h3>{this.props.location.state.title}</h3>
                                 <h5>{this.props.location.state.artist}</h5>
                             </div>
                         </div>
@@ -55,11 +55,16 @@ class TrackList extends Component {
                     {/* <div className='album'>
                         <img src={this.props.location.state.image} />
                     </div> */}
-                    {this.state.tracklist.map(track => {
-                        return(
-                            <Widget track={track} image={this.state.image} title={this.state.title} />
-                        )
-                    })}
+                    <div className='tracklist-header'>
+                        <h4>Track List</h4>
+                    </div>
+                    <div className='tracklist'>
+                        {this.state.tracklist.map(track => {
+                            return(
+                                <Widget track={track} image={this.state.image} title={this.state.title} />
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         )
