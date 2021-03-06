@@ -16,3 +16,7 @@ img {
 .fa-pause {
     color: rgb(58, 58, 58)
 }
+
+.song-title {
+    text-align: left;
+}

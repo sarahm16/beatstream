@@ -29,10 +29,10 @@ class Widget extends Component {
 						<img src={this.props.image} />
 						<img src={this.props.track.album['cover_small']}></img>
 					</div> */}
-					<div className='col-lg-10 title'>
+					<div className='col-lg-10 song-title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
-						<h3>{this.state.title}</h3>
-						<h6 className='album-title'>{this.props.title}</h6>
+						<h4>{this.state.title}</h4>
+						{/* <h6 className='album-title'>{this.props.title}</h6> */}
 					</div>
 					<div className='col-lg-2'>
 						<button onClick={this.playSong} className='play-button'><i className="fas fa-play"></i></button>
