@@ -61,7 +61,7 @@ const TopSong = (props) => {
             </div>
             <div className='song-info'>
                 <button onClick={getArtist} className='artist' ><h4>{props.track.artist.name}</h4></button>
-                <br />{props.track.title} <br />
+                <div>{props.track.title}</div>
                 <audio src={props.track.preview} id={props.track.title} /> <br />
             </div>
         </div>

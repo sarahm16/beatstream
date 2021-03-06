@@ -26,11 +26,11 @@ class TopHits extends Component {
             <div>
                 <Navbar />
                 <div>
-                    <h1 className='title bg-light'>Top Hits</h1>
+                    <h2 className='title bg-light'>Top Hits</h2>
                     <div className='container-fluid top-hits'>
                         <div className='row'>
                             {this.state.tracks.map(track => {
-                                console.log(track);
+                                // console.log(track);
                                 return(
                                     <div className='col-lg-4 top-hit'>
                                         <TopSong track={track} />

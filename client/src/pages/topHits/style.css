@@ -7,10 +7,11 @@
 
 .top-hits {
     padding-top: 20px;
-    background-color: rgb(108, 108, 233);
-    color: white;
+    /* background-color: rgb(108, 108, 233); */
+    /* color: white; */
 }
 
 .top-hit {
     text-align: center;
+    padding-bottom: 40px;
 }
