@@ -1,7 +1,9 @@
 .album-img {
-    border-radius: 0px;
+    border-radius: 50%;
     width: 180px;
     height: 180px;
+    margin: 0 auto;
+
 }
 
 .album {
@@ -11,9 +13,19 @@
 }
 
 .album-info {
+    text-align: center;
     width: 50%;
+    margin-top: 0px;
+    padding: 20px 0px 20px 0px;
 }
 
 .album-title {
     text-align: center;
+}
+
+.album-info-wrapper {
+    width: 100%;
+    background-color: rgba(164, 164, 255, 0.75);
+    color: white;
+    margin-top: 0px;
 }

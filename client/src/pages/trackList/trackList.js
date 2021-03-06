@@ -33,17 +33,24 @@ class TrackList extends Component {
         return(
             <div><Navbar />
                 <div>
-                    <div className='container album-info'>
-                        <div className='row'>
-                            <div className='col-lg-4'>
-                                <img src={this.props.location.state.image} className='album-img' />
+                    <div className='album-info-wrapper'>
+                        <div className='container album-info'>
+                            <div className='row'>
+                                {/* <div className='col-lg-4'>
+                                    <img src={this.props.location.state.image} className='album-img' />
+                                </div>
+                                <div className='col-lg-8 album-title'>
+                                    <h1>{this.props.location.state.title}</h1>
+                                    <h5>{this.props.location.state.artist}</h5>
+                                </div> */}
+                                    <img src={this.props.location.state.image} className='album-img' />
+                                    
                             </div>
-                            <div className='col-lg-8 album-title'>
+                            <div classname='row'>
                                 <h1>{this.props.location.state.title}</h1>
                                 <h5>{this.props.location.state.artist}</h5>
                             </div>
                         </div>
-                        
                     </div>
                     {/* <div className='album'>
                         <img src={this.props.location.state.image} />
