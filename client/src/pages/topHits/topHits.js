@@ -27,12 +27,12 @@ class TopHits extends Component {
                 <Navbar />
                 <div>
                     <h1 className='title bg-light'>Top Hits</h1>
-                    <div className='container top-hits'>
+                    <div className='container-fluid top-hits'>
                         <div className='row'>
                             {this.state.tracks.map(track => {
                                 console.log(track);
                                 return(
-                                    <div className='col-lg-4'>
+                                    <div className='col-lg-4 top-hit'>
                                         <TopSong track={track} />
                                     </div>
                                 )

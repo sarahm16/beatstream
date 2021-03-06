@@ -1,11 +1,16 @@
 .title {
     font-size: 4em;
     text-align: center;
-    margin-bottom: 20px;
     width: 100%;
     padding: 20px;
 }
 
 .top-hits {
-    margin-top: 20px;
+    padding-top: 20px;
+    background-color: rgb(108, 108, 233);
+    color: white;
+}
+
+.top-hit {
+    text-align: center;
 }
