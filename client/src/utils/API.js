@@ -6,7 +6,7 @@ const API = {
 
     searchQuery(query) {
         return(
-            axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${query}`)
+            axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=artist:'${query}'`)
         )
     },
 

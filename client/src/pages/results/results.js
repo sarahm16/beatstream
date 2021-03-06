@@ -21,6 +21,7 @@ class Results extends Component {
 
         API.searchQuery(artist)
             .then(res => {
+                console.log(res);
                 //push unique albums to albumList, prevents album duplicates
                 for(let i=0; i<res.data.data.length; i++) {
                     let albumID = res.data.data[i].album.id;
@@ -38,6 +39,10 @@ class Results extends Component {
 
     componentDidMount = (props) => {
         let artist = this.props.match.params.artist;
+        // API.getArtist(artist)
+        //     .then(res => {
+        //         console.log(res)
+        //     })
         this.initializeComponent(artist);
     }
 
@@ -55,7 +60,7 @@ class Results extends Component {
                 <div className='container'>
                     <div className='row'>
                         {this.state.albums.map(album => {
-                            console.log(album)
+                            // console.log(album)
                             return(
                                 <div className='col-lg-4'><Album album={album.album} trackList={album.album.trackList} artist={album.artist.name} /></div>
                             )
