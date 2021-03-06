@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 import './style.css';
 
@@ -8,7 +8,7 @@ import API from '../../utils/API';
 const TopSong = (props) => {
 
     const [isPlaying, setIsPlaying] = useState(false);
-    const [redirect, setRedirect] = useState(false);
+    // const [redirect, setRedirect] = useState(false);
 
     function playSong() {
         let audioEl = document.getElementById(props.track.title);
@@ -22,29 +22,10 @@ const TopSong = (props) => {
         setIsPlaying(false);
     }
 
-    function getArtist() {
-        setRedirect(true);
-        //console.log(props.track.artist.name);
-        // API.getArtist(props.track.artist.name)
-        //     .then(res => {
-        //         console.log(res)
-        //     })
-        //console.log(props.track.artist);
-    }
-
-    if(redirect) {
-        return(
-            <Redirect to={{
-                pathname: '/results',
-                state: {query: props.track.artist.name}
-            }} />
-        )
-    }
-
     return(
         <div>
             <div className='image'>
-                <img src={props.track.artist['picture_medium']} /> <br />
+                <img src={props.track.artist['picture_medium']} className='top-song-img' /> <br />
                 {!isPlaying && 
                     <button onClick={playSong} className='play'>
                         <svg width="10em" height="10em" viewBox="0 0 16 16" className="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +41,7 @@ const TopSong = (props) => {
                     </button>}
             </div>
             <div className='song-info'>
-                <button onClick={getArtist} className='artist' ><h4>{props.track.artist.name}</h4></button>
+                <Link to={`/results/${props.track.artist.name}`}><button className='artist' ><h4>{props.track.artist.name}</h4></button></Link>
                 <div>{props.track.title}</div>
                 <audio src={props.track.preview} id={props.track.title} /> <br />
             </div>
