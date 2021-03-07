@@ -100,8 +100,18 @@ class Results extends Component {
                     <div className='artist-header row'>
                         <div className='col-lg-9'><h1>{this.state.artist}</h1></div>
                         <div className='col-lg-3 toggle'>
-                            <button onClick={this.displayAlbums} className='albums-button'>Albums</button>
-                            <button onClick={this.displayTracks} className='tracklist-button'>Tracklist</button>
+                            <button 
+                                onClick={this.displayAlbums}
+                                id='albums-button'
+                                className={this.state.toggle === 'albums' ? 'active-button' : 'inactive-button'}>
+                                    Albums
+                            </button>
+                            <button 
+                                onClick={this.displayTracks}
+                                id='tracklist-button'
+                                className={this.state.toggle === 'tracklist' ? 'active-button' : 'inactive-button'}>
+                                    Tracklist
+                            </button>
                         </div>
                     </div>
                     {this.state.toggle === 'albums' && <div className='row'>

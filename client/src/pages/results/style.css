@@ -10,3 +10,30 @@
 .artist-track {
     width: 100%;
 }
+
+#albums-button {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#tracklist-button {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.active-button,
+.inactive-button {
+    /* border-radius: 3px; */
+    padding: 3px 10px 3px 10px;
+}
+
+.active-button {
+    background-color: rgb(106, 34, 189);
+    color: white;
+    border: 1px solid rgb(106, 34, 189);
+}
+
+.inactive-button {
+    color: rgb(106, 34, 189);
+    border: 1px solid rgb(106, 34, 189)
+}
