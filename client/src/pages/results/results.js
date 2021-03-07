@@ -11,6 +11,7 @@ class Results extends Component {
     constructor() {
         super();
         this.state={
+            artist: '',
             albums: []
         }
     }
@@ -32,13 +33,18 @@ class Results extends Component {
                 }
 
                 this.setState({
-                    albums: albumList
+                    albums: albumList,
+                    artist: res.data.data[0].artist.name
                 })
             })
     }
 
     componentDidMount = (props) => {
         let artist = this.props.match.params.artist;
+        // this.setState({
+        //     artist: artist
+        // })
+
         // API.getArtist(artist)
         //     .then(res => {
         //         console.log(res)
@@ -49,6 +55,7 @@ class Results extends Component {
     componentWillReceiveProps = (nextProps) => {
         //allows user to perform consecutive searches
         let artist = nextProps.match.params.artist;
+        //this.setState({artist: artist});
         this.initializeComponent(artist)
     }
 
@@ -56,6 +63,9 @@ class Results extends Component {
         return(
             <div>
                 <Navbar />
+                <div className='artist-header'>
+                    <h3>{this.state.artist}</h3>
+                </div>
                 {/* <h1 className='title bg-light'>{this.props.location.state.query}</h1> */}
                 <div className='container'>
                     <div className='row'>
