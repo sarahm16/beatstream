@@ -41,7 +41,22 @@ class Results extends Component {
                     artist: res.data.data[0].artist.name,
                     artistID: res.data.data[0].artist.id
                 })
+
+                API.getTrackList(res.data.data[0].artist.id)
+                    .then(res => {
+                        this.setState({
+                            tracklist: res.data.data
+                        })
+                    })
             })
+
+        // API.getTrackList(this.state.artistID)
+        // .then(res => {
+        //     console.log(res)
+        //     this.setState({
+        //         tracklist: res.data.data
+        //     })
+        // })
     }
 
     componentDidMount = (props) => {
@@ -52,6 +67,7 @@ class Results extends Component {
         //         console.log(res)
         //     })
         this.initializeComponent(artist);
+        
     }
 
     componentWillReceiveProps = (nextProps) => {
@@ -60,17 +76,18 @@ class Results extends Component {
         this.initializeComponent(artist)
     }
 
+    displayAlbums = () => {
+        this.setState({
+            toggle: 'albums'
+        })
+    }
+
     displayTracks = () => {
         //console.log('tracklist');
         console.log(this.state.artist);
-        API.getTrackList(this.state.artistID)
-            .then(res => {
-                console.log(res)
-                this.setState({
-                    toggle: 'tracklist',
-                    tracklist: res.data.data
-                })
-            })
+        this.setState({
+            toggle: 'tracklist'
+        })
     }
 
     render() {
@@ -83,8 +100,8 @@ class Results extends Component {
                     <div className='artist-header row'>
                         <div className='col-lg-9'><h1>{this.state.artist}</h1></div>
                         <div className='col-lg-3 toggle'>
-                            <button>Albums</button>
-                            <button onClick={this.displayTracks}>Tracklist</button>
+                            <button onClick={this.displayAlbums} className='albums-button'>Albums</button>
+                            <button onClick={this.displayTracks} className='tracklist-button'>Tracklist</button>
                         </div>
                     </div>
                     {this.state.toggle === 'albums' && <div className='row'>
@@ -96,7 +113,6 @@ class Results extends Component {
                         })
                     }</div>}
                     {this.state.toggle === 'tracklist' &&
-                        // <div>Tracklist</div>
                         <div className='row'>
                             {this.state.tracklist.map(track => {
                                 return(
