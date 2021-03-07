@@ -3,5 +3,6 @@
 }
 
 .artist-header {
-    text-align: center;
+    text-align: left;
+    padding-left: 30px;
 }

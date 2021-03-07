@@ -16,9 +16,9 @@ const API = {
         )
     },
 
-    getTrackList(artist) {
+    getTrackList(artistID) {
         return(
-            axios.get(`https://cors-anywhere.herokuapp.com/${artist}`)
+            axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${artistID}/top?limit=50`)
         )
     },
 

@@ -12,7 +12,8 @@ class Results extends Component {
         super();
         this.state={
             artist: '',
-            albums: []
+            albums: [],
+            artistID: 0
         }
     }
 
@@ -34,7 +35,8 @@ class Results extends Component {
 
                 this.setState({
                     albums: albumList,
-                    artist: res.data.data[0].artist.name
+                    artist: res.data.data[0].artist.name,
+                    artistID: res.data.data[0].artist.id
                 })
             })
     }
@@ -59,20 +61,34 @@ class Results extends Component {
         this.initializeComponent(artist)
     }
 
+    displayTracks = () => {
+        //console.log('tracklist');
+        console.log(this.state.artist);
+        API.getTrackList(this.state.artistID)
+            .then(res => {
+                console.log(res)
+            })
+    }
+
     render() {
         return(
             <div>
                 <Navbar />
-                <div className='artist-header'>
-                    <h3>{this.state.artist}</h3>
-                </div>
+                
                 {/* <h1 className='title bg-light'>{this.props.location.state.query}</h1> */}
                 <div className='container'>
+                    <div className='artist-header row'>
+                        <div className='col-lg-9'><h1>{this.state.artist}</h1></div>
+                        <div className='col-lg-3 toggle'>
+                            <button>Albums</button>
+                            <button onClick={this.displayTracks}>Tracklist</button>
+                        </div>
+                    </div>
                     <div className='row'>
                         {this.state.albums.map(album => {
                             // console.log(album)
                             return(
-                                <div className='col-lg-4'><Album album={album.album} trackList={album.album.trackList} artist={album.artist.name} /></div>
+                                <div className='col-lg-4'><Album album={album.album} artist={album.artist.name} /></div>
                             )
                         })
                     }</div>

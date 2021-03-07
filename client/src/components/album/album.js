@@ -36,7 +36,6 @@ const Album = (props) => {
 
     return(
         <div>
-            <img src={props.album['cover_medium']} className='album-cover' />
             <div className='album'>
                 <Link to={{
                     pathname: `/trackList/${props.album.id}`,
@@ -46,7 +45,8 @@ const Album = (props) => {
                         artist: props.artist
                     }
                 }}>
-                    <h5>{props.album.title}</h5>
+                    <img src={props.album['cover_medium']} className='album-cover' />
+                    <h6>{props.album.title}</h6>
                 </Link>
             </div>
         </div>
