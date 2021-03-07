@@ -4,6 +4,7 @@ import API from '../../utils/API';
 
 import Album from '../../components/album/album';
 import Navbar from '../../components/navbar/navbar';
+import Widget from '../../components/widget/widget';
 
 import './style.css';
 
@@ -13,7 +14,9 @@ class Results extends Component {
         this.state={
             artist: '',
             albums: [],
-            artistID: 0
+            artistID: 0,
+            toggle: 'albums',
+            tracklist: []
         }
     }
 
@@ -43,9 +46,6 @@ class Results extends Component {
 
     componentDidMount = (props) => {
         let artist = this.props.match.params.artist;
-        // this.setState({
-        //     artist: artist
-        // })
 
         // API.getArtist(artist)
         //     .then(res => {
@@ -57,7 +57,6 @@ class Results extends Component {
     componentWillReceiveProps = (nextProps) => {
         //allows user to perform consecutive searches
         let artist = nextProps.match.params.artist;
-        //this.setState({artist: artist});
         this.initializeComponent(artist)
     }
 
@@ -67,6 +66,10 @@ class Results extends Component {
         API.getTrackList(this.state.artistID)
             .then(res => {
                 console.log(res)
+                this.setState({
+                    toggle: 'tracklist',
+                    tracklist: res.data.data
+                })
             })
     }
 
@@ -84,14 +87,24 @@ class Results extends Component {
                             <button onClick={this.displayTracks}>Tracklist</button>
                         </div>
                     </div>
-                    <div className='row'>
+                    {this.state.toggle === 'albums' && <div className='row'>
                         {this.state.albums.map(album => {
                             // console.log(album)
                             return(
                                 <div className='col-lg-4'><Album album={album.album} artist={album.artist.name} /></div>
                             )
                         })
-                    }</div>
+                    }</div>}
+                    {this.state.toggle === 'tracklist' &&
+                        // <div>Tracklist</div>
+                        <div className='row'>
+                            {this.state.tracklist.map(track => {
+                                return(
+                                    <div className='artist-track'><Widget track={track} /></div>
+                                )
+                            })}
+                        </div>
+                    }
                 </div>
             </div>
         )
