@@ -86,7 +86,7 @@ class Results extends Component {
                 {/* <h1 className='title bg-light'>{this.props.location.state.query}</h1> */}
                 <div className='container'>
                     <div className='artist-header row'>
-                        <div className='col-lg-9'><h1>{this.state.artist}</h1></div>
+                        <div className='col-lg-9 artist-header-title h1'>{this.state.artist}</div>
                         <div className='col-lg-3 toggle'>
                             <button 
                                 onClick={this.displayAlbums}

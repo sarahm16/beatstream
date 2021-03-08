@@ -18,3 +18,12 @@ i {
     color: white;
     padding-left: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+    #query {
+        width: 125px;
+    }
+    .h2 {
+        font-size: 1.5em;
+    }
+}
