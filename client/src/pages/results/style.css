@@ -15,6 +15,14 @@
     margin-top: 30px;
 }
 
+.albums {
+    margin-top: 30px;
+}
+
+.toggle {
+    padding-top: 10px;
+}
+
 #albums-button {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;

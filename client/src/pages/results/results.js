@@ -102,7 +102,7 @@ class Results extends Component {
                             </button>
                         </div>
                     </div>
-                    {this.state.toggle === 'albums' && <div className='row'>
+                    {this.state.toggle === 'albums' && <div className='row albums'>
                         {this.state.albums.map(album => {
                             // console.log(album)
                             return(
