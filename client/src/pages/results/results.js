@@ -44,28 +44,16 @@ class Results extends Component {
 
                 API.getTrackList(res.data.data[0].artist.id)
                     .then(res => {
+                        console.log(res)
                         this.setState({
                             tracklist: res.data.data
                         })
                     })
             })
-
-        // API.getTrackList(this.state.artistID)
-        // .then(res => {
-        //     console.log(res)
-        //     this.setState({
-        //         tracklist: res.data.data
-        //     })
-        // })
     }
 
     componentDidMount = (props) => {
         let artist = this.props.match.params.artist;
-
-        // API.getArtist(artist)
-        //     .then(res => {
-        //         console.log(res)
-        //     })
         this.initializeComponent(artist);
         
     }
@@ -84,7 +72,7 @@ class Results extends Component {
 
     displayTracks = () => {
         //console.log('tracklist');
-        console.log(this.state.artist);
+        //console.log(this.state.artist);
         this.setState({
             toggle: 'tracklist'
         })
@@ -123,10 +111,10 @@ class Results extends Component {
                         })
                     }</div>}
                     {this.state.toggle === 'tracklist' &&
-                        <div className='container-fluid'>
+                        <div className='container-fluid results-tracklist'>
                             {this.state.tracklist.map(track => {
                                 return(
-                                    <div className='artist-track'><Widget track={track} /></div>
+                                    <div className='artist-track'><Widget track={track} page='results' /></div>
                                 )
                             })}
                         </div>

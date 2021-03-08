@@ -36,9 +36,13 @@ class Widget extends Component {
 						<img src={this.props.image} />
 						<img src={this.props.track.album['cover_small']}></img>
 					</div> */}
-					<div className='col-lg-10 song-title'>
+					{this.props.page === 'results' &&
+						<div className='col-lg-1'><img src={this.props.track.album['cover_small']} alt='cover' /></div>}
+					<div className='col-lg-9 song-title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
 						<h4>{this.state.title}</h4>
+						{this.props.page === 'results' &&
+							<div>{this.props.track.album.title}</div>}
 						{/* <h6 className='album-title'>{this.props.title}</h6> */}
 					</div>
 					<div className='col-lg-2'>
