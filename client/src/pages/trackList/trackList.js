@@ -47,16 +47,16 @@ class TrackList extends Component {
                                     
                             </div>
                             <div className='row album-title'>
+                                <div className='col-lg-12'>
                                 <h3>{this.props.location.state.title}</h3>
-                                <h5>{this.props.location.state.artist}</h5>
+                                </div>
+                                <br />
+                                <div className='col-lg-12'><h5>{this.props.location.state.artist}</h5></div>
                             </div>
                         </div>
                     </div>
-                    {/* <div className='album'>
-                        <img src={this.props.location.state.image} />
-                    </div> */}
-                    <div className='tracklist-header'>
-                        <h4>Track List</h4>
+                    <div className='tracklist-header .display-1'>
+                        <h3>Tracklist</h3>
                     </div>
                     <div className='tracklist'>
                         {this.state.tracklist.map(track => {

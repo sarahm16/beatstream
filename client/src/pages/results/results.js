@@ -123,7 +123,7 @@ class Results extends Component {
                         })
                     }</div>}
                     {this.state.toggle === 'tracklist' &&
-                        <div className='row'>
+                        <div className='container-fluid'>
                             {this.state.tracklist.map(track => {
                                 return(
                                     <div className='artist-track'><Widget track={track} /></div>

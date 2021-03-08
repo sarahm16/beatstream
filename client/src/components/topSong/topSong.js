@@ -14,13 +14,21 @@ const TopSong = (props) => {
         let audioEl = document.getElementById(props.track.title);
         audioEl.play();
         setIsPlaying(true);
+        props.changePlaying(props.track.title)
     }
+
+
 
     function pauseSong() {
         let audioEl = document.getElementById(props.track.title);
         audioEl.pause();
         setIsPlaying(false);
     }
+
+    // if(!props.isPlaying) {
+    //     console.log(props.isPlaying)
+    //     pauseSong();
+    // }
 
     return(
         <div>

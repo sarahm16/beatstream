@@ -14,12 +14,15 @@ img {
 .play-button,
 .pause-button {
     border: none;
-    background: transparent
+    background: transparent;
 }
 
-.fa-play,
+.fa-play {
+    color: white;
+}
+
 .fa-pause {
-    color: rgb(58, 58, 58)
+    color: rgb(0, 228, 0);
 }
 
 .song-title {

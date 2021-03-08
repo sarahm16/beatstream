@@ -46,8 +46,9 @@ const Album = (props) => {
                     }
                 }}>
                     <img src={props.album['cover_medium']} className='album-cover' />
-                    <h6>{props.album.title}</h6>
+                    
                 </Link>
+                <div className='results-album-title'><h5>{props.album.title}</h5></div>
             </div>
         </div>
     )

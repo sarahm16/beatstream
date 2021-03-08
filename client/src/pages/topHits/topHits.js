@@ -9,7 +9,10 @@ import Navbar from '../../components/navbar/navbar';
 import './style.css';
 
 class TopHits extends Component {
-    state={tracks: []}
+    state={
+        tracks: [],
+        song: ''
+    }
 
     componentDidMount() {
         API.getTopHits()
@@ -19,6 +22,13 @@ class TopHits extends Component {
                 tracks: res.data.tracks.data
             })
         })
+    }
+
+    changePlaying = (song) => {
+        this.setState({
+            currentSong: song
+        })
+        console.log(song)
     }
 
     render() {
@@ -33,7 +43,7 @@ class TopHits extends Component {
                                 // console.log(track);
                                 return(
                                     <div className='col-lg-4 top-hit'>
-                                        <TopSong track={track} />
+                                        <TopSong track={track} changePlaying={(song) => this.changePlaying(song)} isPlaying={this.state.currentSong === track.title ? true : false} />
                                     </div>
                                 )
                             })}
