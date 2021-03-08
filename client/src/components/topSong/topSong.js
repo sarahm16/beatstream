@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './style.css';
-
-import API from '../../utils/API';
 
 const TopSong = (props) => {
 

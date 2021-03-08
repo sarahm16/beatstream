@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './style.css';
 

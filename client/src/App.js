@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 import './App.css';
 
-import Navbar from './components/navbar/navbar';
 import Results from './pages/results/results';
 import TopHits from './pages/topHits/topHits';
 import TrackList from './pages/trackList/trackList';

@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import axios from 'axios';
-import { Redirect, Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Widget from '../widget/widget';
-
-import API from '../../utils/API';
 
 import './style.css';
 
