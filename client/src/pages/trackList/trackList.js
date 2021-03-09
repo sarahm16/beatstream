@@ -17,7 +17,7 @@ class TrackList extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.location.state.image)
+        //console.log(this.props.location.state.image)
         //console.log(this.props.match.params.album)
         let albumID = this.props.match.params.album;
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${albumID}/tracks`)
