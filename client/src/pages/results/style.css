@@ -4,15 +4,24 @@
 
 .artist-header {
     text-align: left;
-    padding-left: 30px;
+    margin-left: 40px;
 }
 
 .artist-track {
     width: 100%;
 }
 
+.results-container {
+    padding: 0px;
+    margin-top: 15px;
+}
+
 .results-tracklist {
     margin-top: 30px;
+    padding: 0px;
+    background-color: rgb(87, 87, 173);
+    color: white;
+    
 }
 
 .albums {
@@ -61,12 +70,20 @@
         text-align: center;
     }
 
+    .artist-header {
+        margin-left: 0px;
+    }
+
     .toggle {
         text-align: center;
     }
 
     .results-tracklist,
     .albums {
-        margin-top: 10px;
+        margin-top: 20px;
+    }
+
+    .results-tracklist {
+        padding-left: 0px;
     }
 }

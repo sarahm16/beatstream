@@ -71,8 +71,6 @@ class Results extends Component {
     }
 
     displayTracks = () => {
-        //console.log('tracklist');
-        //console.log(this.state.artist);
         this.setState({
             toggle: 'tracklist'
         })
@@ -84,7 +82,7 @@ class Results extends Component {
                 <Navbar />
                 
                 {/* <h1 className='title bg-light'>{this.props.location.state.query}</h1> */}
-                <div className='container'>
+                <div className='container-fluid results-container'>
                     <div className='artist-header row'>
                         <div className='col-lg-9 artist-header-title h1'>{this.state.artist}</div>
                         <div className='col-lg-3 toggle'>

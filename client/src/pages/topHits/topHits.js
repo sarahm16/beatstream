@@ -27,7 +27,7 @@ class TopHits extends Component {
         this.setState({
             currentSong: song
         })
-        console.log(song)
+        //console.log(song)
     }
 
     render() {
@@ -35,7 +35,7 @@ class TopHits extends Component {
             <div>
                 <Navbar />
                 <div>
-                    <h2 className='title bg-light'>Top Hits</h2>
+                    <div className='h1 title bg-light'>Top Hits</div>
                     <div className='container-fluid top-hits'>
                         <div className='row'>
                             {this.state.tracks.map(track => {

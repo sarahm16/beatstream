@@ -31,17 +31,17 @@ class Widget extends Component {
 	render() {
 		return(
 			<div className='widget'>
-				<div className='row'>
+				<div className='row widget-row'>
 					{this.props.page === 'results' &&
-						<div className='col-lg-1'><img src={this.props.track.album['cover_small']} alt='cover' /></div>}
-					<div className='col-lg-9 col-sm-9 col-9 song-title'>
+						<div className='col-lg-1 col-3 col-sm-3' className='album-cover-small'><img src={this.props.track.album['cover_small']} alt='cover' /></div>}
+					<div className='col-lg-9 col-sm-8 col-8 song-title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
 						<div className='h4'>{this.state.title}</div>
 						{this.props.page === 'results' &&
 							<div>{this.props.track.album.title}</div>}
 						{/* <h6 className='album-title'>{this.props.title}</h6> */}
 					</div>
-					<div className='col-lg-2 col-sm-2 col-2'>
+					<div className='col-lg-2 col-sm-1 col-1 buttons'>
 						{!this.state.isPlaying && <button onClick={this.playSong} className='play-button'><i className="fas fa-play"></i></button>}
 						{this.state.isPlaying && <button onClick={this.pauseSong} className='pause-button'><i className="fas fa-pause"></i></button>}
 					</div>
