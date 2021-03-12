@@ -33,7 +33,7 @@ class Widget extends Component {
 			<div className='widget'>
 				<div className='row widget-row'>
 					{this.props.page === 'results' &&
-						<div className='col-lg-1 col-3 col-sm-3' className='album-cover-small'><img src={this.props.track.album['cover_small']} alt='cover' /></div>}
+						<div className='col-lg-1 col-3 col-sm-3 album-cover-small'><img src={this.props.track.album['cover_small']} alt='cover' /></div>}
 					<div className='col-lg-9 col-sm-8 col-8 song-title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
 						<div className='h4'>{this.state.title}</div>
