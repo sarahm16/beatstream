@@ -20,7 +20,7 @@ class TrackList extends Component {
         //console.log(this.props.location.state.image)
         //console.log(this.props.match.params.album)
         let albumID = this.props.match.params.album;
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${albumID}/tracks`)
+        axios.get(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${albumID}/tracks`)
             .then(res => {
                 console.log(res)
                 this.setState({

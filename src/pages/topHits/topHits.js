@@ -21,6 +21,7 @@ class TopHits extends Component {
                 tracks: res.data.tracks.data
             })
         })
+
     }
 
     changePlaying = (song) => {
