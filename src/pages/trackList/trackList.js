@@ -43,7 +43,7 @@ class TrackList extends Component {
                                     <h1>{this.props.location.state.title}</h1>
                                     <h5>{this.props.location.state.artist}</h5>
                                 </div> */}
-                                    <img src={this.props.location.state.image} className='album-img' />
+                                    <img src={this.props.location.state.image} className='album-img' alt='album cover' />
                                     
                             </div>
                             <div className='row album-title'>
