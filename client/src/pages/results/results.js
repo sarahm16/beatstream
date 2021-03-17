@@ -72,6 +72,8 @@ class Results extends Component {
         //     .then(res => {
         //         console.log(res)
         //     })
+
+
         let artist = this.props.match.params.artist;
         this.initializeComponent(artist);
         
