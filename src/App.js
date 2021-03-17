@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Router, Route } from 'react-router-dom';
 import './App.css';
 
 import Results from './pages/results/results';
@@ -9,12 +9,12 @@ import TrackList from './pages/trackList/trackList';
 function App() {
   return (
     <div>
-      <Router>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         {/* <Navbar /> */}
         <Route exact path='/results/:artist' component={Results} />
         <Route exact path='/trackList/:album' component={TrackList} />
         <Route exact path='/' component={TopHits} />
-      </Router>
+      </BrowserRouter>
       {/* <Search /> */}
     </div>
   );
