@@ -1,0 +1,35 @@
+.no-results-container {
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid purple; */
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 80px;
+    box-shadow: 0px 0px 25px 1px rgb(87, 87, 173);
+}
+
+.oops {
+    color: rgb(42, 42, 99);
+}
+
+.top-hits-link {
+    color: rgb(155, 69, 155);
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+a {
+    color: inherit;
+}
+
+.fa-arrow-left {
+    color: rgb(155, 69, 155);
+}
+
+@media only screen and (max-width: 600px) {
+    .no-results-container {
+        width: 80%;
+
+    }
+}
