@@ -24,6 +24,7 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
+  "proxy": "https://api.deezer.com",
   "eslintConfig": {
     "extends": "react-app"
   },
