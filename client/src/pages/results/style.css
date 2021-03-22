@@ -13,7 +13,6 @@
 
 .results-container {
     padding: 0px;
-    margin-top: 15px;
 }
 
 .results-tracklist {
@@ -30,6 +29,10 @@
 
 .toggle {
     padding-top: 10px;
+}
+
+.buttons {
+    margin: 0 auto;
 }
 
 #albums-button {
@@ -63,6 +66,12 @@
     font-size: 3em;
     font-weight: bold;
 } */
+
+.artist-bio {
+    background-color: rgb(53, 53, 53);
+    color: white;
+    text-align: center;
+}
 
 @media only screen and (max-width: 600px) {
     .artist-header-title {

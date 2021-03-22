@@ -5,6 +5,8 @@ import './style.css';
 
 const Album = (props) => {
 
+    console.log(props.album)
+
     // const [ redirect, setRedirect ] = useState(false);
 
     // function getTrackList() {
