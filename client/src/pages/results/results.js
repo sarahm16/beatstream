@@ -21,7 +21,8 @@ class Results extends Component {
             toggle: 'albums',
             tracklist: [],
             noResults: false,
-            bio: ''
+            bio: '',
+            image: ''
         }
     }
 
@@ -31,8 +32,9 @@ class Results extends Component {
 
         API.getArtist(artist)
             .then(res => {
-                console.log(res.data.artist.bio.summary)
+                console.log(res.data.artist.image)
                 this.setState({
+                    // image: res.data.artist.image[2]['#text'],
                     bio: res.data.artist.bio.summary
                 })
             })
@@ -58,6 +60,7 @@ class Results extends Component {
                     }
 
                     this.setState({
+                        image: res.data.data[0].artist.picture,
                         albums: albumList,
                         artist: res.data.data[0].artist.name,
                         artistID: res.data.data[0].artist.id
@@ -109,8 +112,9 @@ class Results extends Component {
                     <div className='container-fluid results-container'>
                         <div className='row'>
                             <div className='col-lg-3 artist-bio'>
-                                <h1>{this.state.artist}</h1>
-                                <div>{this.state.bio}</div>
+                                <img src={this.state.image} className='artist-image' alt='artist image' />
+                                <h3 className='artist-name'>{this.state.artist}</h3>
+                                <div className='bio'>{this.state.bio}</div>
                             </div>
 
                             <div className='col-lg-9'>
