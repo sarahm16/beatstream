@@ -1,22 +1,28 @@
 const express = require('express');
 const request = require('request');
+const cors = require('cors');
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// });
 
-// app.get('/', (req, res) => {
+app.use(cors);
+
+
+
+// app.get(`/results/:artist`, (req, res) => {
+//   console.log(req.params)
 //   request(
-//     { url: 'https://api.deezer.com/chart' },
+//     { url: `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=artist:'${req.params.artist}'`},
 //     (error, response, body) => {
 //       if (error || response.statusCode !== 200) {
 //         return res.status(500).json({ type: 'error', message: err.message });
 //       }
-//       //console.log(JSON.parse(body))
-//       //res.json(JSON.parse(body));
+//       console.log(JSON.parse(body))
+//       res.json(JSON.parse(body));
 //     }
 //   )
 // });

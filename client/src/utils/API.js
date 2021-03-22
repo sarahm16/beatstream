@@ -22,7 +22,8 @@ const API = {
 
     getTopHits() {
         return(
-            axios.get('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart')
+            axios.get('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart'
+                )
 
         )
     }
