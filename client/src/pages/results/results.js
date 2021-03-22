@@ -20,13 +20,22 @@ class Results extends Component {
             artistID: 0,
             toggle: 'albums',
             tracklist: [],
-            noResults: false
+            noResults: false,
+            bio: ''
         }
     }
 
     initializeComponent = (artist) => {
         let albumList = [];
         let albumIDs = [];
+
+        API.getArtist(artist)
+            .then(res => {
+                console.log(res.data.artist.bio.summary)
+                this.setState({
+                    bio: res.data.artist.bio.content
+                })
+            })
 
         API.searchQuery(artist)
             .then(res => {

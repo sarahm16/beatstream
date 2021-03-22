@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 import API from '../../utils/API';
 
@@ -14,9 +15,10 @@ class TopHits extends Component {
     }
 
     componentDidMount() {
+        
         API.getTopHits()
         .then(res=> {
-            console.log(res.data.tracks.data)
+            //console.log(res.data.tracks.data)
             this.setState({
                 tracks: res.data.tracks.data
             })
