@@ -135,7 +135,7 @@ class Results extends Component {
                                     </div>
                                 </div>
                                 {this.state.toggle === 'albums' &&
-                                    <div className='container-fluid'>
+                                    <div className='container'>
                                         <div className='row albums'>
                                             {this.state.albums.map(album => {
                                                 // console.log(album)

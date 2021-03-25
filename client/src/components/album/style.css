@@ -1,6 +1,7 @@
 .album-cover {
     border-radius: 0px;
-    width: 110%;
+    width: 100%;
+    margin: 0px;
 }
 
 /* .album-button {
@@ -11,10 +12,11 @@
 
 .album {
     text-align: center;
-    margin: 20px;
+    margin-bottom: 30px;
 }
 
 .results-album-title {
     margin-top: 10px;
-    color: rgb(86, 61, 153);
+    color: white;
+    text-align: center;
 }
