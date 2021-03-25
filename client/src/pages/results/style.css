@@ -1,6 +1,4 @@
-.container {
-    margin-top: 15px;
-}
+
 
 .artist-header {
     text-align: left;
@@ -34,6 +32,7 @@
 
 .music-container {
     background-color: rgb(226, 226, 226);
+    padding-left: 0px;
 }
 
 .buttons {

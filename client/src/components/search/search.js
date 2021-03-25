@@ -22,7 +22,7 @@ class Search extends Component {
             <div>
                 <div className='search'>
                     <input type='text' id='query' onChange={this.onChange} placeholder='Search Artists'></input>
-                    <Link to={`/results/${this.state.query}`}><button className='search'><i className="fas fa-search"></i></button></Link>
+                    <Link to={`/results/${this.state.query}`}><button className='search'><i className="fas fa-search search-icon"></i></button></Link>
                 </div>
             </div>
         )

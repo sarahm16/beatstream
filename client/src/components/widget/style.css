@@ -3,30 +3,39 @@
 } */
 
 .widget {
-    padding: 10px 15px 10px 100px;
+    padding: 10px 15px 10px 0px;
     border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.album-cover-small {
+    text-align: center;
 }
 
 img {
     border-radius: 0px;
+    margin-left: 10px;
 }
 
 .play-button,
 .pause-button {
-    border: none;
-    background: transparent;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(106, 34, 189);
+    border-color: transparent;
+    padding: 3px 7px 3px 7px;
 }
 
-.fa-play {
+/* .fa-play {
     color: white;
 }
 
 .fa-pause {
     color: rgb(0, 228, 0);
-}
+} */
 
 .song-title {
     text-align: left;
+    /* padding-left: 30px; */
 }
 
 @media only screen and (max-width: 600px) {
@@ -43,10 +52,10 @@ img {
     .widget .h4 {
         font-size: 1.3em;
     }
-    .album-cover-small {
-        padding-left: 10px;
-        padding-right: 0px;
-    }
+
+    /* .album-cover-small {
+        text-align: center;
+    } */
 
     .song-title {
         padding-left: 0px;

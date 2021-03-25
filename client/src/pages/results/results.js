@@ -134,16 +134,26 @@ class Results extends Component {
                                         </button>
                                     </div>
                                 </div>
-                                <div className='container-fluid'>
-                                    <div className='row albums'>
-                                        {this.state.albums.map(album => {
-                                            // console.log(album)
+                                {this.state.toggle === 'albums' &&
+                                    <div className='container-fluid'>
+                                        <div className='row albums'>
+                                            {this.state.albums.map(album => {
+                                                // console.log(album)
+                                                return(
+                                                    <div className='col-lg-4'><Album album={album.album}  /></div>
+                                                )
+                                            })
+                                        }</div>
+                                </div>}
+                                {this.state.toggle === 'tracklist' &&
+                                    <div className='container-fluid results-tracklist'>
+                                        {this.state.tracklist.map(track => {
                                             return(
-                                                <div className='col-lg-4'><Album album={album.album}  /></div>
+                                                <div className='artist-track'><Widget track={track} page='results' /></div>
                                             )
-                                        })
-                                    }</div>
-                                </div>
+                                        })}
+                                    </div>
+                                }
                             </div>
                         </div>
 
