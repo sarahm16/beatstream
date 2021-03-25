@@ -6,6 +6,7 @@ import Album from '../../components/album/album';
 import Navbar from '../../components/navbar/navbar';
 import Widget from '../../components/widget/widget';
 import NoResults from '../../components/noResults/noResults';
+import TrackList from '../trackList/trackList';
 
 //import axios from 'axios';
 
@@ -146,13 +147,14 @@ class Results extends Component {
                                         }</div>
                                 </div>}
                                 {this.state.toggle === 'tracklist' &&
-                                    <div className='container-fluid results-tracklist'>
-                                        {this.state.tracklist.map(track => {
-                                            return(
-                                                <div className='artist-track'><Widget track={track} page='results' /></div>
-                                            )
-                                        })}
-                                    </div>
+                                    // <div className='container-fluid results-tracklist'>
+                                    //     {this.state.tracklist.map(track => {
+                                    //         return(
+                                    //             <div className='artist-track'><Widget track={track} page='results' /></div>
+                                    //         )
+                                    //     })}
+                                    // </div>
+                                    <TrackList tracklist={this.state.tracklist} />
                                 }
                             </div>
                         </div>

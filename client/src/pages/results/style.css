@@ -1,22 +1,5 @@
-
-
-.artist-header {
-    text-align: left;
-    margin-left: 40px;
-}
-
-.artist-track {
-    width: 100%;
-}
-
 .results-container {
     padding: 0px;
-}
-
-.results-tracklist {
-    padding: 0px;
-    background-color: rgb(131, 131, 131);
-    color: white;
 }
 
 .albums {
@@ -67,11 +50,6 @@
     border: 1px solid rgb(106, 34, 189)
 }
 
-/* .artist-header-title {
-    font-size: 3em;
-    font-weight: bold;
-} */
-
 .artist-bio {
     background-color: rgb(53, 53, 53);
     color: white;
@@ -94,26 +72,6 @@
     margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 600px) {
-    .artist-header-title {
-        font-size: 2em;
-        text-align: center;
-    }
+/* @media only screen and (max-width: 600px) {
 
-    .artist-header {
-        margin-left: 0px;
-    }
-
-    .toggle {
-        text-align: center;
-    }
-
-    .results-tracklist,
-    .albums {
-        margin-top: 20px;
-    }
-
-    .results-tracklist {
-        padding-left: 0px;
-    }
-}
+} */
