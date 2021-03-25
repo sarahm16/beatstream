@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 import API from '../../utils/API';
 
@@ -96,8 +97,18 @@ class Results extends Component {
         })
     }
 
-    testFunction() {
-        console.log('testing')
+    displayAlbum = (album) => {
+        console.log(album)
+        console.log(album.album.tracklist)
+        // axios.get(album.album.tracklist)
+        //     .then(res => {
+        //         console.log(res)
+        //     })
+
+        API.getAlbumTracklist(album.album.id)
+            .then(res => {
+                console.log(res)
+            })
     }
 
     render() {
@@ -140,7 +151,7 @@ class Results extends Component {
                                             {this.state.albums.map(album => {
                                                 // console.log(album)
                                                 return(
-                                                    <div className='col-lg-4'><Album album={album.album} toggle={() => this.testFunction()}  /></div>
+                                                    <div className='col-lg-4'><Album album={album.album} displayAlbum={() => this.displayAlbum(album)}  /></div>
                                                 )
                                             })
                                         }</div>

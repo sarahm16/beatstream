@@ -29,6 +29,12 @@ const API = {
         return(
             axios.get('/chart')
         )
+    },
+
+    getAlbumTracklist(albumID) {
+        return(
+            axios.get(`/album/${albumID}/tracks`)
+        )
     }
 }
 

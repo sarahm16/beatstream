@@ -5,40 +5,13 @@ import './style.css';
 
 const Album = (props) => {
 
-    console.log(props.album)
+    // console.log(props.album)
 
-    // const [ redirect, setRedirect ] = useState(false);
-
-    // function getTrackList() {
-    //     //console.log('props');
-    //     //console.log(props.album.tracklist)
-    //     // axios.get(`https://cors-anywhere.herokuapp.com/${props.album.tracklist}`)
-    //     //     .then(res => {
-    //     //         console.log('tracklist');
-    //     //         console.log(res);
-    //     //         setRedirect(true);
-    //     //     })
-    //     setRedirect(true);
-    // }
-
-    // if(redirect) {
-    //     console.log('props.album');
-    //     console.log(props.album);
-    //     return(
-    //         <Redirect to={{
-    //             pathname: '/trackList',
-    //             state: {
-    //                 tracklist: props.album.tracklist,
-    //                 album: props.album
-    //             }
-    //         }} />
-    //     )
-    // }
 
     return(
         <div>
             <div className='album'>
-                <Link to={{
+                {/* <Link to={{
                     pathname: `/trackList/${props.album.id}`,
                     state: {
                         image: props.album['cover_medium'],
@@ -48,7 +21,10 @@ const Album = (props) => {
                 }}>
                     <img src={props.album['cover_medium']} className='album-cover' />
                     
-                </Link>
+                </Link> */}
+                <button onClick={() => props.displayAlbum()}>
+                    <img src={props.album['cover_medium']} className='album-cover' />
+                </button>
                 <div className='results-album-title'><h5>{props.album.title}</h5></div>
             </div>
         </div>
