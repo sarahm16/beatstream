@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import Widget from '../../components/widget/widget';
-import Navbar from '../../components/navbar/navbar';
 
 import './style.css';
 

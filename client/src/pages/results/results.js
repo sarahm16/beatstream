@@ -31,15 +31,6 @@ class Results extends Component {
         let albumList = [];
         let albumIDs = [];
 
-        API.getArtist(artist)
-            .then(res => {
-                console.log(res.data.artist.image)
-                this.setState({
-                    // image: res.data.artist.image[2]['#text'],
-                    bio: res.data.artist.bio.summary
-                })
-            })
-
         API.searchQuery(artist)
             .then(res => {
                 console.log(res);
@@ -74,6 +65,16 @@ class Results extends Component {
                                 tracklist: res.data.data
                             })
                         })
+
+
+                    API.getArtist(artist)
+                    .then(res => {
+                        console.log(res.data.artist.image)
+                        this.setState({
+                            // image: res.data.artist.image[2]['#text'],
+                            bio: res.data.artist.bio.summary
+                        })
+                    })
                 }
             })
     }
@@ -89,16 +90,14 @@ class Results extends Component {
         this.initializeComponent(artist)
     }
 
-    displayAlbums = () => {
+    toggle(toggleComponent) {
         this.setState({
-            toggle: 'albums'
+            toggle: toggleComponent
         })
     }
 
-    displayTracks = () => {
-        this.setState({
-            toggle: 'tracklist'
-        })
+    testFunction() {
+        console.log('testing')
     }
 
     render() {
@@ -122,13 +121,13 @@ class Results extends Component {
                                 <div className='row toggle'>
                                     <div className='buttons'>
                                         <button 
-                                            onClick={this.displayAlbums}
+                                            onClick={() => this.toggle('albums')}
                                             id='albums-button'
                                             className={this.state.toggle === 'albums' ? 'active-button' : 'inactive-button'}>
                                                 Albums
                                         </button>
                                         <button 
-                                            onClick={this.displayTracks}
+                                            onClick={() => this.toggle('tracklist')}
                                             id='tracklist-button'
                                             className={this.state.toggle === 'tracklist' ? 'active-button' : 'inactive-button'}>
                                                 Tracklist
@@ -141,19 +140,12 @@ class Results extends Component {
                                             {this.state.albums.map(album => {
                                                 // console.log(album)
                                                 return(
-                                                    <div className='col-lg-4'><Album album={album.album}  /></div>
+                                                    <div className='col-lg-4'><Album album={album.album} toggle={() => this.testFunction()}  /></div>
                                                 )
                                             })
                                         }</div>
                                 </div>}
                                 {this.state.toggle === 'tracklist' &&
-                                    // <div className='container-fluid results-tracklist'>
-                                    //     {this.state.tracklist.map(track => {
-                                    //         return(
-                                    //             <div className='artist-track'><Widget track={track} page='results' /></div>
-                                    //         )
-                                    //     })}
-                                    // </div>
                                     <TrackList tracklist={this.state.tracklist} />
                                 }
                             </div>
