@@ -14,11 +14,9 @@
 }
 
 .results-tracklist {
-    margin-top: 30px;
     padding: 0px;
-    background-color: rgb(87, 87, 173);
+    background-color: rgb(131, 131, 131);
     color: white;
-    
 }
 
 .albums {
