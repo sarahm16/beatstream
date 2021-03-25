@@ -117,7 +117,7 @@ class Results extends Component {
                                 <div className='bio'>{this.state.bio}</div>
                             </div>
 
-                            <div className='col-lg-9'>
+                            <div className='col-lg-9 music-container'>
                                 <div className='row toggle'>
                                     <div className='buttons'>
                                         <button 
@@ -134,14 +134,16 @@ class Results extends Component {
                                         </button>
                                     </div>
                                 </div>
-                                <div className='row albums'>
-                                    {this.state.albums.map(album => {
-                                        // console.log(album)
-                                        return(
-                                            <div className='col-lg-4'><Album album={album.album}  /></div>
-                                        )
-                                    })
-                                }</div>
+                                <div className='container-fluid'>
+                                    <div className='row albums'>
+                                        {this.state.albums.map(album => {
+                                            // console.log(album)
+                                            return(
+                                                <div className='col-lg-4'><Album album={album.album}  /></div>
+                                            )
+                                        })
+                                    }</div>
+                                </div>
                             </div>
                         </div>
 

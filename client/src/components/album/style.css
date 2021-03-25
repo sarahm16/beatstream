@@ -1,5 +1,6 @@
 .album-cover {
     border-radius: 0px;
+    width: 110%;
 }
 
 /* .album-button {
@@ -15,5 +16,5 @@
 
 .results-album-title {
     margin-top: 10px;
-    color: rgb(57, 57, 119);
+    color: rgb(86, 61, 153);
 }
