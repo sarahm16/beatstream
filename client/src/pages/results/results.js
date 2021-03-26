@@ -27,7 +27,8 @@ class Results extends Component {
             bio: '',
             image: '',
             albumCover: '',
-            albumTitle: ''
+            albumTitle: '',
+            albumTracklist: []
         }
     }
 
@@ -113,7 +114,7 @@ class Results extends Component {
                 console.log(res)
                 this.setState({
                     toggle: 'albumTracklist',
-                    tracklist: res.data.data,
+                    albumTracklist: res.data.data,
                     albumCover: album.album['cover_small'],
                     albumTitle: album.album.title
                 })
@@ -184,7 +185,7 @@ class Results extends Component {
                                 }
 
                                 {this.state.toggle === 'albumTracklist' &&
-                                    <AlbumTracklist tracklist={this.state.tracklist} albumCover={this.state.albumCover} albumTitle={this.state.albumTitle} />}
+                                    <AlbumTracklist tracklist={this.state.albumTracklist} albumCover={this.state.albumCover} albumTitle={this.state.albumTitle} />}
                             </div>
                         </div>
 
