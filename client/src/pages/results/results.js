@@ -139,20 +139,28 @@ class Results extends Component {
 
                             <div className='col-lg-9 music-container'>
                                 <div className='row toggle'>
-                                    <div className='buttons'>
-                                        <button 
-                                            onClick={() => this.toggle('albums')}
-                                            id='albums-button'
-                                            className={this.state.toggle === 'albums' ? 'active-button' : 'inactive-button'}>
-                                                Albums
-                                        </button>
-                                        <button 
-                                            onClick={() => this.toggle('tracklist')}
-                                            id='tracklist-button'
-                                            className={this.state.toggle === 'tracklist' ? 'active-button' : 'inactive-button'}>
-                                                Tracklist
-                                        </button>
-                                    </div>
+                                    {this.state.toggle !== 'albumTracklist' &&
+                                        <div className='buttons'>
+                                            <button 
+                                                onClick={() => this.toggle('albums')}
+                                                id='albums-button'
+                                                className={this.state.toggle === 'albums' ? 'active-button' : 'inactive-button'}>
+                                                    Albums
+                                            </button>
+                                            <button 
+                                                onClick={() => this.toggle('tracklist')}
+                                                id='tracklist-button'
+                                                className={this.state.toggle === 'tracklist' ? 'active-button' : 'inactive-button'}>
+                                                    Tracklist
+                                            </button>
+                                        </div>
+                                    }
+                                    {this.state.toggle === 'albumTracklist' &&
+                                        <div>
+                                            <button onClick={() => this.toggle('albums')}>Albums</button>
+                                            <h4>{this.state.albumTitle}</h4>
+                                        </div>
+                                    }
                                 </div>
                                 {this.state.toggle === 'albums' &&
                                     <div className='container'>
