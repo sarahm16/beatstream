@@ -4,6 +4,11 @@
     margin: 0px;
 }
 
+.album-cover-button {
+    border: none;
+    padding: 0px;
+}
+
 /* .album-button {
     border: none;
     background: transparent;
