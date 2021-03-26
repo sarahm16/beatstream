@@ -156,9 +156,15 @@ class Results extends Component {
                                         </div>
                                     }
                                     {this.state.toggle === 'albumTracklist' &&
-                                        <div>
-                                            <button onClick={() => this.toggle('albums')}>Albums</button>
-                                            <h4>{this.state.albumTitle}</h4>
+                                        <div className='row album-info'>
+                                            <div className='col-lg-3 albums-button'>
+                                                <button onClick={() => this.toggle('albums')} className='back-to-albums'><i className="fas fa-long-arrow-alt-left"></i> Albums</button>
+                                            </div>
+                                            <div className='col-lg-6 album-tracklist-title' >
+                                                <h2>{this.state.albumTitle}</h2>
+                                            </div>
+                                            <div className='col-lg-3'></div>
+
                                         </div>
                                     }
                                 </div>
