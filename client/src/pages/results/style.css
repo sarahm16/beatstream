@@ -58,13 +58,17 @@
 }
 
 .artist-name {
-    color: rgb(228, 18, 228);
+    color: #bb86fc;
     width: 100%;
 }
 
 .bio {
     font-size: .9em;
     padding: 0px 10px 0px 10px;
+}
+
+.results {
+    margin: 0px;
 }
 
 .artist-image {

@@ -130,7 +130,7 @@ class Results extends Component {
                 {/* <h1 className='title bg-light'>{this.props.location.state.query}</h1> */}
                 {!this.state.noResults &&
                     <div className='container-fluid results-container'>
-                        <div className='row'>
+                        <div className='row results'>
                             <div className='col-lg-3 artist-bio'>
                                 <img src={this.state.image} className='artist-image' alt='artist image' />
                                 <h3 className='artist-name'>{this.state.artist}</h3>

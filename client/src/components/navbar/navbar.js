@@ -7,7 +7,7 @@ import Search from '../search/search';
 
 function Navbar() {
     return(
-        <nav className="navbar navbar-light justify-content-between">
+        <nav className="navbar navbar-light justify-content-between container-fluid">
             <Link to='/'><span className="h2"><i className="fas fa-music"></i> Beatstream</span></Link>
             <form className="form-inline">
                 <Search />
