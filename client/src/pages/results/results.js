@@ -8,6 +8,7 @@ import Navbar from '../../components/navbar/navbar';
 import Widget from '../../components/widget/widget';
 import NoResults from '../../components/noResults/noResults';
 import TrackList from '../trackList/trackList';
+import AlbumTracklist from '../albumTracklist/albumTracklist';
 
 //import axios from 'axios';
 
@@ -24,7 +25,9 @@ class Results extends Component {
             tracklist: [],
             noResults: false,
             bio: '',
-            image: ''
+            image: '',
+            albumCover: '',
+            albumTitle: ''
         }
     }
 
@@ -108,6 +111,12 @@ class Results extends Component {
         API.getAlbumTracklist(album.album.id)
             .then(res => {
                 console.log(res)
+                this.setState({
+                    toggle: 'albumTracklist',
+                    tracklist: res.data.data,
+                    albumCover: album.album['cover_small'],
+                    albumTitle: album.album.title
+                })
             })
     }
 
@@ -157,8 +166,11 @@ class Results extends Component {
                                         }</div>
                                 </div>}
                                 {this.state.toggle === 'tracklist' &&
-                                    <TrackList tracklist={this.state.tracklist} />
+                                    <TrackList tracklist={this.state.tracklist}  />
                                 }
+
+                                {this.state.toggle === 'albumTracklist' &&
+                                    <AlbumTracklist tracklist={this.state.tracklist} albumCover={this.state.albumCover} albumTitle={this.state.albumTitle} />}
                             </div>
                         </div>
 

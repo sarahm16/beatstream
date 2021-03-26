@@ -32,14 +32,11 @@ class Widget extends Component {
 		return(
 			<div className='widget'>
 				<div className='row widget-row'>
-					{this.props.page === 'results' &&
-						<div className='col-lg-1 col-2 col-sm-3 album-cover-small'><img src={this.props.track.album['cover_small']} alt='cover' /></div>}
+					<div className='col-lg-1 col-2 col-sm-3 album-cover-small'><img src={this.props.albumCover} alt='cover' /></div>
 					<div className='col-lg-9 col-sm-8 col-8 song-title'>
 						<audio id={this.state.title} src={this.state.preview}></audio>
 						<div className='h5'>{this.state.title}</div>
-						{this.props.page === 'results' &&
-							<div>{this.props.track.album.title}</div>}
-						{/* <h6 className='album-title'>{this.props.title}</h6> */}
+						<div>{this.props.albumTitle}</div>
 					</div>
 					<div className='col-lg-1 col-sm-1 col-1 buttons'>
 						{!this.state.isPlaying && <button onClick={this.playSong} className='play-button'><i className="fas fa-play"></i></button>}

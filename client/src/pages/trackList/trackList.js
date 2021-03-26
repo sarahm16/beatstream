@@ -22,7 +22,7 @@ class TrackList extends Component {
             <div className='container-fluid results-tracklist'>
                 {this.state.tracklist.map(track => {
                     return(
-                        <div className='artist-track'><Widget track={track} page='results' /></div>
+                        <div className='artist-track'><Widget track={track} albumCover={track.album['cover_small']} albumTitle={track.album.title} /></div>
                     )
                 })}
             </div>
