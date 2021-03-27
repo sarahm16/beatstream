@@ -73,9 +73,8 @@ class Results extends Component {
 
                     API.getArtist(artist)
                     .then(res => {
-                        console.log(res.data.artist.image)
+                        console.log(res.data)
                         this.setState({
-                            // image: res.data.artist.image[2]['#text'],
                             bio: res.data.artist.bio.summary
                         })
                     })
@@ -103,10 +102,6 @@ class Results extends Component {
     displayAlbum = (album) => {
         console.log(album)
         console.log(album.album.tracklist)
-        // axios.get(album.album.tracklist)
-        //     .then(res => {
-        //         console.log(res)
-        //     })
 
         API.getAlbumTracklist(album.album.id)
             .then(res => {
@@ -133,7 +128,6 @@ class Results extends Component {
 
                 {this.state.noResults && <NoResults />}
                 
-                {/* <h1 className='title bg-light'>{this.props.location.state.query}</h1> */}
                 {!this.state.noResults &&
                     <div className='container-fluid results-container'>
                         <div className='row results'>
@@ -186,7 +180,6 @@ class Results extends Component {
                                     <div className='container'>
                                         <div className='row albums'>
                                             {this.state.albums.map(album => {
-                                                // console.log(album)
                                                 return(
                                                     <div className='col-lg-4'><Album album={album.album} displayAlbum={() => this.displayAlbum(album)}  /></div>
                                                 )
@@ -201,10 +194,6 @@ class Results extends Component {
                                     <AlbumTracklist tracklist={this.state.albumTracklist} albumCover={this.state.albumCover} albumTitle={this.state.albumTitle} />}
                             </div>
                         </div>
-
-
-
-
                 </div>}
             </div>
         )
