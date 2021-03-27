@@ -100,9 +100,48 @@
     text-align: center;
 }
 
+.fa-chevron-down {
+    color: white;
+}
+
+.more-info-button {
+    border: none;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.small-screen-bio {
+    display: none
+}
+
 @media only screen and (max-width: 600px) {
     .albums-button {
         text-align: center;
         margin-bottom: 10px;
+    }
+
+    .small-screen-bio {
+        display: block;
+    }
+
+    .large-screen-bio {
+        display: none
+    }
+
+    .bio {
+        padding-bottom: 20px;
+    }
+
+    .more-info {
+        display: block;
+        text-align: center;
     }
 }

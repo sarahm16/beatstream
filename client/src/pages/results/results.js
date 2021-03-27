@@ -28,7 +28,8 @@ class Results extends Component {
             image: '',
             albumCover: '',
             albumTitle: '',
-            albumTracklist: []
+            albumTracklist: [],
+            displayBio: false
         }
     }
 
@@ -121,6 +122,12 @@ class Results extends Component {
             })
     }
 
+    displayBio = () => {
+        this.setState({
+            displayBio: !this.state.displayBio
+        })
+    }
+
     render() {
         return(
             <div>
@@ -135,7 +142,15 @@ class Results extends Component {
                             <div className='col-lg-3 artist-bio'>
                                 <img src={this.state.image} className='artist-image' alt='artist image' />
                                 <h3 className='artist-name'>{this.state.artist}</h3>
-                                <div className='bio'>{this.state.bio}</div>
+                               <div className='small-screen-bio'>
+                                    <div className='more-info'>
+                                        <button className='more-info-button' onClick={this.displayBio}><i className="fas fa-chevron-down"></i></button>
+                                    </div>
+                                    <div className={this.state.displayBio ? 'show bio' : 'hide bio'}>{this.state.bio}</div>
+                                </div>
+                                <div className='large-screen-bio'>
+                                    {this.state.bio}
+                                </div>
                             </div>
 
                             <div className='col-lg-9 music-container'>
