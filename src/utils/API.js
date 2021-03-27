@@ -20,7 +20,7 @@ const API = {
 
     getTopHits() {
         return(
-            axios.get('/chart')
+            axios.get('https://api.deezer.com/chart')
         )
     },
 
