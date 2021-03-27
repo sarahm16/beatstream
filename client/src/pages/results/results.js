@@ -158,10 +158,10 @@ class Results extends Component {
                                     }
                                     {this.state.toggle === 'albumTracklist' &&
                                         <div className='row album-info'>
-                                            <div className='col-lg-3 albums-button'>
+                                            <div className='col-lg-3 col-12 albums-button'>
                                                 <button onClick={() => this.toggle('albums')} className='back-to-albums'><i className="fas fa-long-arrow-alt-left"></i> Albums</button>
                                             </div>
-                                            <div className='col-lg-6 album-tracklist-title' >
+                                            <div className='col-lg-6 col-12 album-tracklist-title' >
                                                 <h2>{this.state.albumTitle}</h2>
                                             </div>
                                             <div className='col-lg-3'></div>

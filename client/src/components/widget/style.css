@@ -52,22 +52,8 @@ img {
 }
 
 @media only screen and (max-width: 600px) {
-    .widget {
-        padding-left: 0px;
-        padding-right: 0px;
-        margin: 0px;
-    }
-
-    .widget-row {
-        margin: 0px;
-    }
-
-    .widget .h4 {
-        font-size: 1.3em;
-    }
-
     .song-title {
-        padding-left: 0px;
+        padding-left: 5px;
     }
 
     .buttons {
