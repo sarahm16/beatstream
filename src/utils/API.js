@@ -4,7 +4,7 @@ const API = {
 
     searchQuery(query) {
         return(
-            axios.get(`/search?q=artist:'${query}'`)
+            axios.get(`https://gentle-chamber-99717.herokuapp.com/https://api.deezer.com/search?q=artist:'${query}'`)
         )
     },
 
@@ -14,29 +14,17 @@ const API = {
 
     getTrackList(artistID) {
         return(
-            axios.get(`/artist/${artistID}/top?limit=50`)
+            axios.get(`https://gentle-chamber-99717.herokuapp.com/https://api.deezer.com/artist/${artistID}/top?limit=50`)
         )
     },
 
     getTopHits() {
-
         return axios.get('https://gentle-chamber-99717.herokuapp.com/https://api.deezer.com/chart');
-        //return fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://api.deezer.com/chart')}`)
-                    // .then(response => {
-                    //   if (response.ok) 
-                    //   //console.log(response.json())
-                    //   return response.json()
-                    //   throw new Error('Network response was not ok.')
-                    // })
-                    // .then(data => {return JSON.parse(data.contents)})
-        // return(
-        //     axios.get('https://yacdn.org/proxy/https://api.deezer.com/chart')
-        // )
     },
 
     getAlbumTracklist(albumID) {
         return(
-            axios.get(`/album/${albumID}/tracks`)
+            axios.get(`https://gentle-chamber-99717.herokuapp.com/https://api.deezer.com/album/${albumID}/tracks`)
         )
     }
 }
