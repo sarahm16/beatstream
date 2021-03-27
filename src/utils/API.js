@@ -20,7 +20,8 @@ const API = {
 
     getTopHits() {
 
-        return fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://api.deezer.com/chart')}`)
+        return axios.get('https://gentle-chamber-99717.herokuapp.com/https://api.deezer.com/chart');
+        //return fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://api.deezer.com/chart')}`)
                     // .then(response => {
                     //   if (response.ok) 
                     //   //console.log(response.json())

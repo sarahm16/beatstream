@@ -15,26 +15,16 @@ class TopHits extends Component {
 
     componentDidMount() {
 
-        API.getTopHits()
-        .then(response => {
-            if (response.ok) 
-            //console.log(response.json())
-            return response.json()
-            throw new Error('Network response was not ok.')
-          })
-          .then(res => {
-              let data = JSON.parse(res.contents)
-                this.setState({
-                    tracks: data.tracks.data
-                })
-            })
+        //console.log(API)
         
-        // API.getTopHits()
-        // .then(res=> {
-        //     console.log(res);
-        //     //console.log(res.data.tracks.data)
-            
-        // })
+        API.getTopHits()
+        .then(res=> {
+            console.log(res);
+            //console.log(res.data.tracks.data)
+            this.setState({
+                tracks: res.data.tracks.data
+            })
+        })
 
     }
 
