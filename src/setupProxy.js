@@ -3,12 +3,12 @@ const proxy = require('http-proxy-middleware');
 module.exports = function(app) {
 
     //topHits() proxy
-    // app.use(
-    //     proxy("/chart", {
-    //         target: "https://api.deezer.com",
-    //         changeOrigin: true
-    //     })
-    // )
+    app.use(
+        proxy("/chart", {
+            target: "https://api.deezer.com",
+            changeOrigin: true
+        })
+    )
 
     //getTracklist() proxy
     app.use(
