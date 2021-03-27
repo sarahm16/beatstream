@@ -17,6 +17,7 @@ class TopHits extends Component {
         
         API.getTopHits()
         .then(res=> {
+            console.log(res);
             //console.log(res.data.tracks.data)
             this.setState({
                 tracks: res.data.tracks.data
