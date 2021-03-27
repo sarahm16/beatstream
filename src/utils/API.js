@@ -19,9 +19,18 @@ const API = {
     },
 
     getTopHits() {
-        return(
-            axios.get('/chart')
-        )
+
+        return fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://api.deezer.com/chart')}`)
+                    // .then(response => {
+                    //   if (response.ok) 
+                    //   //console.log(response.json())
+                    //   return response.json()
+                    //   throw new Error('Network response was not ok.')
+                    // })
+                    // .then(data => {return JSON.parse(data.contents)})
+        // return(
+        //     axios.get('https://yacdn.org/proxy/https://api.deezer.com/chart')
+        // )
     },
 
     getAlbumTracklist(albumID) {
