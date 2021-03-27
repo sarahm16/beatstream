@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-import Widget from '../widget/widget';
-
 import './style.css';
 
 class Search extends Component {

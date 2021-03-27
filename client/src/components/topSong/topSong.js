@@ -31,7 +31,7 @@ const TopSong = (props) => {
     return(
         <div>
             <div className='image'>
-                <img src={props.track.artist['picture_medium']} className='top-song-img' /> <br />
+                <img src={props.track.artist['picture_medium']} className='top-song-img' alt='top artist' /> <br />
                 {!isPlaying && 
                     <button onClick={playSong} className='play'>
                         <svg width="10em" height="10em" viewBox="0 0 16 16" className="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

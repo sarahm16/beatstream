@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 
 import API from '../../utils/API';
 
 import Album from '../../components/album/album';
 import Navbar from '../../components/navbar/navbar';
-import Widget from '../../components/widget/widget';
 import NoResults from '../../components/noResults/noResults';
 import TrackList from '../trackList/trackList';
 import AlbumTracklist from '../albumTracklist/albumTracklist';
@@ -140,7 +138,7 @@ class Results extends Component {
                     <div className='container-fluid results-container'>
                         <div className='row results'>
                             <div className='col-lg-3 artist-bio'>
-                                <img src={this.state.image} className='artist-image' alt='artist image' />
+                                <img src={this.state.image} className='artist-image' alt='artist' />
                                 <h3 className='artist-name'>{this.state.artist}</h3>
                                <div className='small-screen-bio'>
                                     <div className='more-info'>
