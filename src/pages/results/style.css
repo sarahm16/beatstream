@@ -122,6 +122,10 @@
     display: none
 }
 
+.large-screen-bio {
+    display: block;
+}
+
 @media only screen and (max-width: 600px) {
     .albums-button {
         text-align: center;

@@ -9,7 +9,7 @@ const API = {
     },
 
     getArtist(artist) {
-        return axios.get(`http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artist}&api_key=b287ff2c1c76c0da8f617ca184fbfd04&format=json`)
+        return axios.get(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artist}&api_key=b287ff2c1c76c0da8f617ca184fbfd04&format=json`)
     },
 
     getTrackList(artistID) {
